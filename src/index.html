@@ -11,14 +11,16 @@
 <body>
 	<header class="header">
 		<div class="header-logo">
-			<div class="header-logo__img mr-6">
+			<div class="header-logo__img mr-3 mr-lg-6">
 				<img src="img/logo.svg" alt="">
 			</div>
 			<div class="header-logo__text">
-				<div class="text-subtitle-1">Люкс Логистик</div>
-				<div class="text-body-2 fade-60 font-alt">
+				<div class="text-small text-lg-subtitle-1 text-md-body-0 text--demibold">Люкс Логистик</div>
+				<div class="text-small text-lg-body-2 fade-60 font-alt">
 					Логистическая компания <br>
-					междугородных перевозок
+					<span class="d-none d-lg-block">
+						междугородных перевозок
+					</span>
 				</div>
 			</div>
 		</div>
@@ -97,61 +99,84 @@
 
 	<section class="fitches">
 		<div class="fitches-block">
-			<div class="grid">
-				<div class="grid-col-4">
-					<div class="fitches-item">
-						<svg class="icon">
-							<use xlink:href="img/icons.svg#shield-check" />
-						</svg>
-						<div>
-							<div class="text--demibold font-alt mb-1">Страхование груза</div>
-							<div class="text-body-2 font-alt fade-60">
-								Если требуется дополнительная гарантия,
-								мы оформим страховой полис на Ваше имя
-								у наших партнеров
+			<div class="swiper grid-wrap">
+				<div class="swiper-wrapper">
+					<div class="grid-col-12 grid-col-lg-4 swiper-slide">
+						<div class="fitches-item">
+							<svg class="icon">
+								<use xlink:href="img/icons.svg#shield-check" />
+							</svg>
+							<div>
+								<div class="text--demibold font-alt mb-1">Страхование груза</div>
+								<div class="text-body-2 font-alt fade-60">
+									Если требуется дополнительная гарантия,
+									мы оформим страховой полис на Ваше имя
+									у наших партнеров
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="grid-col-4">
-					<div class="fitches-item">
-						<svg class="icon">
-							<use xlink:href="img/icons.svg#doc" />
-						</svg>
-						<div>
-							<div class="text--demibold font-alt mb-1">Полный пакет документов</div>
-							<div class="text-body-2 font-alt fade-60">
-								Взаимодействие с бухгалтерией клиента,
-								отправка оригиналов закрывающих
-								документов в течение 2-х дней
+					<div class="grid-col-12 grid-col-lg-4 swiper-slide">
+						<div class="fitches-item">
+							<svg class="icon">
+								<use xlink:href="img/icons.svg#doc" />
+							</svg>
+							<div>
+								<div class="text--demibold font-alt mb-1">Полный пакет документов</div>
+								<div class="text-body-2 font-alt fade-60">
+									Взаимодействие с бухгалтерией клиента,
+									отправка оригиналов закрывающих
+									документов в течение 2-х дней
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="grid-col-4">
-					<div class="fitches-item">
-						<svg class="icon">
-							<use xlink:href="img/icons.svg#user" />
-						</svg>
-						<div>
-							<div class="text--demibold font-alt mb-1">Персональный менеджер</div>
-							<div class="text-body-2 font-alt fade-60">
-								За каждым клиентом закрепляется
-								индивидуальный менеджер, который
-								будет на связи 24/7
+					<div class="grid-col-12 grid-col-lg-4 swiper-slide">
+						<div class="fitches-item">
+							<svg class="icon">
+								<use xlink:href="img/icons.svg#user" />
+							</svg>
+							<div>
+								<div class="text--demibold font-alt mb-1">Персональный менеджер</div>
+								<div class="text-body-2 font-alt fade-60">
+									За каждым клиентом закрепляется
+									индивидуальный менеджер, который
+									будет на связи 24/7
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
+			<button class="btn btn-small btn-fab btn--white-bg slider-nav slider-prev d-lg-none">
+				<svg class="icon">
+					<use xlink:href="./img/icons.svg#to-left" />
+				</svg>
+			</button>
+			<button class="btn btn-small btn-fab btn--white-bg slider-nav slider-next d-lg-none">
+				<svg class="icon">
+					<use xlink:href="./img/icons.svg#to-right" />
+				</svg>
+			</button>
 		</div>
 	</section>
+	<script>
+		new Swiper('.fitches-block .swiper', {
+			slidesPerView: 'auto',
+			watchSlidesProgress: true,
+			lazy: true,
+			navigation: {
+				nextEl: '.fitches-block .slider-next',
+				prevEl: '.fitches-block .slider-prev'
+			}
+		})
+	</script>
 
 	<section class="types">
 		<div class="types__title title">Основные виды перевозимых грузов</div>
 		<div class="types__subtitle subtitle">Подберем оптимально подходящий для перевозки вашего груза автомобиль</div>
 		<div class="grid">
-			<div class="grid-col-3">
+			<div class="grid-col-6 grid-col-md-4 grid-col-lg-3">
 				<div class="types-item h-100">
 					<div class="types-item__img">
 						<img src="img/types/1.png" alt="">
@@ -188,7 +213,7 @@
 		</div>
 
 		<div class="grid">
-			<div class="grid-col-4">
+			<div class="grid-col-12 grid-col-md-6 grid-col-lg-4">
 				<div class="advantages-item">
 					<img src="img/advantages/1.png" alt="" class="icon">
 					<div class="font-alt">
@@ -203,9 +228,76 @@
 		</div>
 	</section>
 
-	<div class="pray">
-		
-	</div>
+	<section class="pray">
+		<div class="pray-form">
+			<div class="pray-form__header">
+				<div class="text-h6 color-primary font-alt">В течение 2 часов</div>
+				<div class="text-h2 color-white">Получите бесплатный расчет стоимости вашей грузоперевозки</div>
+			</div>
+			<div class="pray-form__sect">
+				<div class="grid">
+					<div class="grid-col-12">
+						<label class="form-field">
+							<div class="text--demibold color-white">Инфо о грузе (что перевозите, примерный вес)</div>
+							<div class="form-input-cover">
+								<input type="text" class="form-input" placeholder="Напишите о вашем грузе...">
+							</div>
+						</label>
+					</div>
+					<div class="grid-col-6">
+						<label class="form-field">
+							<div class="text--demibold color-white">Откуда выезд</div>
+							<div class="form-input-cover">
+								<input type="text" class="form-input" placeholder="Укажите адрес...">
+							</div>
+						</label>
+					</div>
+					<div class="grid-col-6">
+						<label class="form-field">
+							<div class="text--demibold color-white">Куда везем</div>
+							<div class="form-input-cover">
+								<input type="text" class="form-input" placeholder="Укажите адрес...">
+							</div>
+						</label>
+					</div>
+				</div>
+			</div>
+			<div class="pray-form__sect">
+				<div class="grid">
+
+					<div class="grid-col-6">
+						<label class="form-field">
+							<div class="text--demibold color-white">Ваше имя</div>
+							<div class="form-input-cover">
+								<input type="text" class="form-input" placeholder="Укажите имя...">
+							</div>
+						</label>
+					</div>
+					<div class="grid-col-6">
+						<label class="form-field">
+							<div class="text--demibold color-white">Ваш телефон</div>
+							<div class="form-input-cover">
+								<input type="text" class="form-input" placeholder="+7 ( _ _ _ ) _ _ _ - _ _ - _ _">
+							</div>
+						</label>
+					</div>
+				</div>
+
+				<div class="flex flex-align-center mt-10">
+					<button class="btn btn--primary btn--fill">
+						<svg class="icon mr-2">
+							<use xlink:href="img/icons.svg#calculator" />
+						</svg>
+						Рассчитать стоимость
+					</button>
+					<div class="text-body-2 fade-40 color-white">
+						Отправляя форму Вы даете согласие на обработку <br>
+						Ваших персональных данных
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 
 	<footer class="footer"> </footer>
 </body>
