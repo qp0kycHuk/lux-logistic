@@ -9,7 +9,7 @@
 </head>
 
 <body>
-	<header class="header">
+	<!-- <header class="header">
 		<div class="header-logo">
 			<div class="header-logo__img mr-3 mr-lg-6">
 				<img src="img/logo.svg" alt="">
@@ -294,10 +294,189 @@
 						Отправляя форму Вы даете согласие на обработку <br>
 						Ваших персональных данных
 					</div>
+
 				</div>
 			</div>
 		</div>
 	</section>
+
+
+	<section class="reviews">
+		<div class="reviews__title title">Отзывы наших клиентов</div>
+		<div class="reviews__subtitle subtitle">Каждый день мы получаем положительные отзывы от наших постоянных клиентов</div>
+		<div class="slider slider-reviews">
+			<div class="swiper grid-wrap grid-spacing-6">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide grid-col-12 grid-col-lg-3 grid-col-md-4">
+						<div class="reviews__item">
+							<img class="reviews__img" src="img/reviews/1.png" alt="">
+						</div>
+					</div>
+					<div class="swiper-slide grid-col-12 grid-col-lg-3 grid-col-md-4">
+						<div class="reviews__item">
+							<img class="reviews__img" src="img/reviews/2.png" alt="">
+						</div>
+					</div>
+					<div class="swiper-slide grid-col-12 grid-col-lg-3 grid-col-md-4">
+						<div class="reviews__item">
+							<img class="reviews__img" src="img/reviews/3.png" alt="">
+						</div>
+					</div>
+					<div class="swiper-slide grid-col-12 grid-col-lg-3 grid-col-md-4">
+						<div class="reviews__item">
+							<img class="reviews__img" src="img/reviews/4.png" alt="">
+						</div>
+					</div>
+					<div class="swiper-slide grid-col-12 grid-col-lg-3 grid-col-md-4">
+						<div class="reviews__item">
+							<img class="reviews__img" src="img/reviews/1.png" alt="">
+						</div>
+					</div>
+					<div class="swiper-slide grid-col-12 grid-col-lg-3 grid-col-md-4">
+						<div class="reviews__item">
+							<img class="reviews__img" src="img/reviews/2.png" alt="">
+						</div>
+					</div>
+					<div class="swiper-slide grid-col-12 grid-col-lg-3 grid-col-md-4">
+						<div class="reviews__item">
+							<img class="reviews__img" src="img/reviews/3.png" alt="">
+						</div>
+					</div>
+					<div class="swiper-slide grid-col-12 grid-col-lg-3 grid-col-md-4">
+						<div class="reviews__item">
+							<img class="reviews__img" src="img/reviews/4.png" alt="">
+						</div>
+					</div>
+				</div>
+			</div>
+			<button class="slider-reviews__btn slider-btn slider-prev">
+				<svg class="icon">
+					<use xlink:href="img/icons.svg#to-left" />
+				</svg>
+			</button>
+			<button class="slider-reviews__btn slider-btn slider-next">
+				<svg class="icon">
+					<use xlink:href="img/icons.svg#to-right" />
+				</svg>
+			</button>
+		</div>
+		<button class="btn btn--primary btn--fill mt-10 mx-auto">Оставить отзыв</button>
+	</section>
+	
+	<script>
+		new Swiper('.slider-reviews .swiper', {
+			slidesPerView: 'auto',
+			watchSlidesProgress: true,
+			navigation: {
+				nextEl: '.slider-reviews .slider-next',
+				prevEl: '.slider-reviews .slider-prev'
+			}
+		})
+	</script>
+	
+	<section class="questions">
+		<div class="questions__title title">Вопросы и ответы по грузоперевозкам</div>
+		<div class="questions__subtitle subtitle">Мы собрали для вас самые популярные и часто задаваемые вопросы</div>
+		<div class="questions__items">
+			<div class="questions__item" data-toggle-cover>
+				<div class="questions__head" data-toggle-link>
+					<div class="questions__name">
+						<svg class="questions__icon icon mr-4">
+							<use xlink:href="img/icons.svg#question" />
+						</svg>
+						<div class="questions__name-text">Сколько займет переезд?</div>
+					</div>
+					<div class="questions__sign">
+						<span class="questions__line questions__line--1"></span>
+						<span class="questions__line questions__line--2"></span>
+					</div>
+				</div>
+				<div class="questions__body" data-toggle-content data-toggle-height="true">
+					<p class="questions__text pt-5 pb-2">
+						C каждым клиентом заключается договор. В нем фиксируются все условия и договоренности, а также наша ответственность за сохранность имущества. В нашей компании действуют собственные Стандарты организации переезда. Все сотрудники неукоснительно соблюдают его, а Служба контроля качества следит за этим. Мы точно планируем все предстоящие работы и согласовываем их с вами. Если нужно, то за несколько дней до переезда привезем коробки, скотч и другие упаковочные материалы, чтобы вы могли собрать вещи без нашего участия.
+					</p>
+				</div>
+			</div>
+			<div class="questions__item" data-toggle-cover>
+				<div class="questions__head" data-toggle-link>
+					<div class="questions__name">
+						<svg class="questions__icon icon mr-4">
+							<use xlink:href="img/icons.svg#question" />
+						</svg>
+						<div class="questions__name-text">Не нашел нужную услугу на сайте, как я могу связаться и уточнить что мне нужно?</div>
+					</div>
+					<div class="questions__sign">
+						<span class="questions__line questions__line--1"></span>
+						<span class="questions__line questions__line--2"></span>
+					</div>
+				</div>
+				<div class="questions__body" data-toggle-content data-toggle-height="true">
+					<p class="questions__text pt-5 pb-2">
+						C каждым клиентом заключается договор. В нем фиксируются все условия и договоренности, а также наша ответственность за сохранность имущества. В нашей компании действуют собственные Стандарты организации переезда. Все сотрудники неукоснительно соблюдают его, а Служба контроля качества следит за этим. Мы точно планируем все предстоящие работы и согласовываем их с вами. Если нужно, то за несколько дней до переезда привезем коробки, скотч и другие упаковочные материалы, чтобы вы могли собрать вещи без нашего участия.
+					</p>
+				</div>
+			</div>
+			<div class="questions__item" data-toggle-cover>
+				<div class="questions__head" data-toggle-link>
+					<div class="questions__name">
+						<svg class="questions__icon icon mr-4">
+							<use xlink:href="img/icons.svg#question" />
+						</svg>
+						<div class="questions__name-text">Не нашел нужную услугу на сайте, как я могу связаться и уточнить что мне нужно?</div>
+					</div>
+					<div class="questions__sign">
+						<span class="questions__line questions__line--1"></span>
+						<span class="questions__line questions__line--2"></span>
+					</div>
+				</div>
+				<div class="questions__body" data-toggle-content data-toggle-height="true">
+					<p class="questions__text pt-5 pb-2">
+						C каждым клиентом заключается договор. В нем фиксируются все условия и договоренности, а также наша ответственность за сохранность имущества. В нашей компании действуют собственные Стандарты организации переезда. Все сотрудники неукоснительно соблюдают его, а Служба контроля качества следит за этим. Мы точно планируем все предстоящие работы и согласовываем их с вами. Если нужно, то за несколько дней до переезда привезем коробки, скотч и другие упаковочные материалы, чтобы вы могли собрать вещи без нашего участия.
+					</p>
+				</div>
+			</div>
+			<div class="questions__item" data-toggle-cover>
+				<div class="questions__head" data-toggle-link>
+					<div class="questions__name">
+						<svg class="questions__icon icon mr-4">
+							<use xlink:href="img/icons.svg#question" />
+						</svg>
+						<div class="questions__name-text">Как мы гарантируем сохранность вашего имущества?</div>
+					</div>
+					<div class="questions__sign">
+						<span class="questions__line questions__line--1"></span>
+						<span class="questions__line questions__line--2"></span>
+					</div>
+				</div>
+				<div class="questions__body" data-toggle-content data-toggle-height="true">
+					<p class="questions__text pt-5 pb-2">
+						C каждым клиентом заключается договор. В нем фиксируются все условия и договоренности, а также наша ответственность за сохранность имущества. В нашей компании действуют собственные Стандарты организации переезда. Все сотрудники неукоснительно соблюдают его, а Служба контроля качества следит за этим. Мы точно планируем все предстоящие работы и согласовываем их с вами. Если нужно, то за несколько дней до переезда привезем коробки, скотч и другие упаковочные материалы, чтобы вы могли собрать вещи без нашего участия.
+					</p>
+				</div>
+			</div>
+			<div class="questions__item" data-toggle-cover>
+				<div class="questions__head" data-toggle-link>
+					<div class="questions__name">
+						<svg class="questions__icon icon mr-4">
+							<use xlink:href="img/icons.svg#question" />
+						</svg>
+						<div class="questions__name-text">Кому вы доверяете свои вещи?</div>
+					</div>
+					<div class="questions__sign">
+						<span class="questions__line questions__line--1"></span>
+						<span class="questions__line questions__line--2"></span>
+					</div>
+				</div>
+				<div class="questions__body" data-toggle-content data-toggle-height="true">
+					<p class="questions__text pt-5 pb-2">
+						C каждым клиентом заключается договор. В нем фиксируются все условия и договоренности, а также наша ответственность за сохранность имущества. В нашей компании действуют собственные Стандарты организации переезда. Все сотрудники неукоснительно соблюдают его, а Служба контроля качества следит за этим. Мы точно планируем все предстоящие работы и согласовываем их с вами. Если нужно, то за несколько дней до переезда привезем коробки, скотч и другие упаковочные материалы, чтобы вы могли собрать вещи без нашего участия.
+					</p>
+        </div>
+			</div>
+		</div>
+	</section>
+
+
 
 	<footer class="footer"> </footer>
 </body>
