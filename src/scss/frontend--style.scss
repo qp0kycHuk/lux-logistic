@@ -52,6 +52,7 @@ body {
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
+	background: #F6F6F6;
 
 	* {
 		font-family: var(--font-base);
@@ -106,6 +107,7 @@ body {
 	padding-top: 66px;
 	padding-bottom: 52px;
 	position: relative;
+	background: #FFFFFF;
 
 
 	&__title {
@@ -205,9 +207,11 @@ body {
 }
 
 .section-rounded {
-	border-left: 15px solid rgba(0, 0, 0, 0);
-	border-right: 15px solid rgba(0, 0, 0, 0);
 	border-radius: 16px;
+	width: calc(100% - 30px);
+	margin: 0 auto;
+	padding-left: calc(50% - var(--section-width) / 2 - 15px);
+	padding-right: calc(50% - var(--section-width) / 2 - 15px);
 }
 
 .title {
@@ -279,6 +283,7 @@ body {
 .advantages {
 	padding-top: 58px;
 	padding-bottom: 78px;
+	background: #FFFFFF;
 
 	&__subtitle {
 		margin-bottom: 40px;
