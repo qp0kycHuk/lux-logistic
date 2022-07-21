@@ -9,6 +9,16 @@
 </head>
 
 <body>
+	<div id="top"></div>
+	<section class="nav">                                                                                                                     
+		<button data-scroll="#top" class="nav__item btn btn--link btn--primary color-text">Главная</button>
+		<button data-scroll="#types" class="nav__item btn btn--link btn--primary color-text">Виды грузов</button>
+		<button data-scroll="#advantages" class="nav__item btn btn--link btn--primary color-text">Преимущества</button>
+		<button data-scroll="#park" class="nav__item btn btn--link btn--primary color-text">Автопарк</button>
+		<button data-scroll="#reviews" class="nav__item btn btn--link btn--primary color-text">Отзывы</button>
+		<button data-scroll="#questions" class="nav__item btn btn--link btn--primary color-text">Вопрос-ответ</button>
+		<button data-scroll="#footer" class="nav__item btn btn--link btn--primary color-text">Контакты</button>
+	</section>
 	<header class="header">
 		<div class="header-logo">
 			<div class="header-logo__img mr-3 mr-lg-6">
@@ -203,7 +213,7 @@
 		})
 	</script>
 
-	<section class="types">
+	<section class="types" id="types">
 		<div class="types__title title">Основные виды перевозимых грузов</div>
 		<div class="types__subtitle subtitle">Подберем оптимально подходящий для перевозки вашего груза автомобиль</div>
 		<div class="grid">
@@ -237,7 +247,7 @@
 		</div>
 	</section>
 
-	<section class="advantages section-rounded">
+	<section class="advantages section-rounded" id="advantages">
 		<div class="advantages__title title">С нами не только выгодно, но и комфортно</div>
 		<div class="advantages__subtitle subtitle">
 			Ознакомьтесь внимательно с нашими преимуществами и будьте уверены в своем выборе
@@ -384,7 +394,7 @@
 		</div>
 	</section>
 
-	<section class="park">
+	<section class="park" id="park">
 		<div class="park__title title">Наш автопарк</div>
 		<div class="park__subtitle subtitle">
 			Оперативно подберем необходимый транспорт и оптимальный маршрут для перевозки груза
@@ -406,7 +416,7 @@
 		</div>
 	</section>
 
-	<section class="reviews">
+	<section class="reviews" id="reviews">
 		<div class="reviews__title title">Отзывы наших клиентов</div>
 		<div class="reviews__subtitle subtitle">Каждый день мы получаем положительные отзывы от наших постоянных
 			клиентов</div>
@@ -480,7 +490,7 @@
 		})
 	</script>
 
-	<section class="questions">
+	<section class="questions" id="questions">
 		<div class="questions__title title">Вопросы и ответы по грузоперевозкам</div>
 		<div class="questions__subtitle subtitle">Мы собрали для вас самые популярные и часто задаваемые вопросы</div>
 		<div class="questions__items">
@@ -609,7 +619,55 @@
 		</div>
 	</section>
 
-	<footer class="footer">
+	<section class="logistician">
+		<div class="logistician__block">
+			<div class="logistician__info">
+				<div class="logistician__title">
+					Задайте вопрос <br>
+					нашему логисту
+				</div>
+				<div class="logistician__subtitle">
+					или получите бесплатный расчет <br>
+					стоимости доставки
+				</div>
+			</div>
+			<form class="logistician__form">
+				<div class="grid grid-spacing-7">
+					<div class="grid-col-12 grid-col-lg-6">
+						<label class="form-field mb-4">
+							<div class="logistician__name text--demibold mb-2">Имя</div>
+							<div class="form-input-cover">
+								<input type="text" class="form-input" placeholder="Введите имя">
+							</div>
+						</label>
+						<label class="form-field">
+							<div class="logistician__name text--demibold mb-2">Телефон</div>
+							<div class="form-input-cover">
+								<input type="text" class="form-input" placeholder="+7 ">
+							</div>
+						</label>
+					</div>
+					<div class="grid-col-12 grid-col-lg-6">
+						<div class="logistician__name text--demibold mb-2">Ваш вопрос</div>
+						<div class="form-input-cover logistician__textarea">
+							<textarea class="form-input h-100" placeholder="Напишите здесь..."></textarea>
+						</div>
+					</div>
+					<div class="grid-col-12">
+						<div class="logistician__items flex flex-align-center">
+							<button class="logistician__btn btn btn--primary btn--fill mr-5" type="submit">Задать вопрос</button>
+							<span class="logistician__politic">
+								Отправляя форму Вы даете согласие на обработку <br>
+								Ваших персональных данных
+							</span>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</section>
+
+	<footer class="footer" id="footer">
 		<div class="footer__top">
 			<div class="footer__title">Наши контакты</div>
 			<button class="btn btn--primary btn--fill mt-5">

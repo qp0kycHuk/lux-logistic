@@ -76,6 +76,37 @@ body {
 	}
 }
 
+.nav {
+	display        : flex;
+	align-items    : center;
+	justify-content: space-between;
+	padding-top    : 16px;
+	padding-bottom : 16px;
+	position       : fixed;
+	width          : 100%;
+	left           : 0;
+	top            : 0;
+	z-index        : var(--zi-l2);
+	background     : #ECECEC;
+
+	&__item {
+		font-weight: 400;
+		position   : relative;
+
+		&:before {
+			content : '';
+			position: absolute;
+			inset   : -16px;
+		}
+
+		@media(hover) {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
 .header {
 	display    : flex;
 	align-items: center;
@@ -230,7 +261,7 @@ body {
 		width     : 255px;
 		margin-top: 42px;
 
-		@media (min-width:$md){
+		@media (min-width:$md) {
 			display: none;
 		}
 	}
@@ -834,6 +865,110 @@ body {
 		}
 	}
 
+}
+
+.logistician {
+	padding-bottom: 70px;
+
+	&__block {
+		background   : #353332;
+		border-radius: 16px;
+		padding      : 40px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		color: #fff;
+	}
+	&__info {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		padding-left: 30px;
+	}
+	&__title {
+		font-weight: 600;
+		font-size: 36px;
+		margin-bottom: 13px;
+		line-height: 1.2;
+	}
+	&__subtitle {
+		font-weight: 400;
+		font-size: 22px;
+		line-height: 1.1;
+	}
+	&__form {
+		width: 100%;
+		max-width: 620px;
+	}
+	&__name {
+		font-size: 20px;
+	}
+	&__textarea {
+		height: 160px;
+	}
+	&__politic {
+		opacity: 0.5;
+		font-weight: 400;
+		font-size: 12px;
+		line-height: 14px;
+	}
+	&__btn {
+		width: 200px;
+	}
+
+	@media(max-width: $lg) {
+		&__block {
+			flex-direction: column;
+			align-items: flex-start;
+			justify-content: flex-start;
+		}
+		&__info {
+			padding-left: 0;
+			margin-bottom: 40px;
+		}
+	}
+
+	@media(max-width: $md) {
+		& {
+			padding-bottom: 40px;
+		}
+		&__block {
+			padding: 0;
+		}
+		&__info {
+			width: 100%;
+			padding: 25px;
+			margin-bottom: 0;
+			border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+		}
+		&__title {
+			font-size: 24px;
+			margin-bottom: 9px;
+		}
+		&__subtitle {
+			font-size: 16px;
+		}
+		&__form {
+			padding: 25px;
+		}
+		&__name  {
+			display: none;
+		}
+		&__items {
+			flex-direction: column;
+			align-items: flex-start;
+		}
+		&__textarea {
+			height: 120px;
+		}
+		&__btn {
+			width: 100%;
+			margin-bottom: 15px;
+		}
+		&__politic {
+			font-size: 10px;
+		}
+	}
 }
 
 .footer {
