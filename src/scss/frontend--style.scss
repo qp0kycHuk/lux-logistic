@@ -58,6 +58,10 @@ body {
 		font-family: var(--font-base);
 	}
 
+	&.menu-open {
+		overflow: hidden;
+	}
+
 }
 
 .active-enabled {

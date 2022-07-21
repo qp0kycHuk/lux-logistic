@@ -55,20 +55,20 @@ function loadHandler() {
 
 			const map = new maps.Map('map', {
 
-				center: [45.03191007458623,38.921171499999936],
+				center: [45.03191007458623, 38.921171499999936],
 				zoom: 16
-	
+
 			})
-	
-			const placemark = new maps.Placemark([45.03191007458623,38.921171499999936], {}, {
-		
+
+			const placemark = new maps.Placemark([45.03191007458623, 38.921171499999936], {}, {
+
 				iconLayout: 'default#image',
 				iconImageHref: '../img/geo.png',
 				iconImageSize: [72, 72],
 				iconImageOffset: [-20, -50]
-				
+
 			})
-	
+
 			map.controls.remove('geolocationControl')
 			map.controls.remove('searchControl')
 			map.controls.remove('trafficControl')
@@ -82,6 +82,19 @@ function loadHandler() {
 		.catch(error => console.log('Failed to load Yandex Maps', error));
 }
 
+window.addEventListener('toggleopen', (event) => {
+	if (event.detail.target.classList.contains('menu')) {
+		document.body.classList.add('menu-open')
+	}
+
+})
+
+window.addEventListener('toggleclose', (event) => {
+	if (event.detail.target.classList.contains('menu')) {
+		document.body.classList.remove('menu-open')
+	}
+
+})
 
 function clickHandler(event) {
 	function scrollTo() {
@@ -115,9 +128,9 @@ function scrollHandler() {
 	const nav = document.querySelector('.nav');
 	if (window.pageYOffset > 10) {
 		nav.classList.add('scrolled')
-		
-	}else{
+
+	} else {
 		nav.classList.remove('scrolled')
-		
+
 	}
 }
