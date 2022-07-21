@@ -801,5 +801,21 @@ body {
 }
 
 .footer {
+	color           : #fff;
+	padding-top     : 34px;
+	padding-bottom  : 54px;
 	background-color: #413E3D;
+
+	&__top {
+		display        : flex;
+		align-items    : center;
+		justify-content: space-between;
+		margin-bottom  : 23px;
+	}
+
+	&__title {
+		font-weight: 600;
+		font-size  : 42px;
+		line-height: 57px;
+	}
 }
