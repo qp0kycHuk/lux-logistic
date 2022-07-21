@@ -409,7 +409,7 @@ body {
 	border-radius: 16px;
 	margin: 0 16px;
 	padding-top: 56px;
-	padding-bottom: 170px;
+	padding-bottom: 70px;
 
 	&__title {
 		margin-bottom: 8px;
@@ -600,5 +600,15 @@ body {
 		background: #353332;
 		border-radius: 24px;
 
+	}
+}
+
+.logistician {
+	padding-bottom: 70px;
+	&__block {
+		background: #353332;
+		border-radius: 16px;
+		padding: 40px 0;
+		
 	}
 }
