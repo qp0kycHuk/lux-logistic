@@ -390,7 +390,7 @@
 						<svg class="questions__icon icon mr-4">
 							<use xlink:href="img/icons.svg#question" />
 						</svg>
-						<div class="questions__name-text">Сколько займет переезд?</div>
+						<div class="questions__name-text font-alt">Сколько займет переезд?</div>
 					</div>
 					<div class="questions__sign">
 						<span class="questions__line questions__line--1"></span>
@@ -409,7 +409,7 @@
 						<svg class="questions__icon icon mr-4">
 							<use xlink:href="img/icons.svg#question" />
 						</svg>
-						<div class="questions__name-text">Не нашел нужную услугу на сайте, как я могу связаться и уточнить что мне нужно?</div>
+						<div class="questions__name-text font-alt">Не нашел нужную услугу на сайте, как я могу связаться и уточнить что мне нужно?</div>
 					</div>
 					<div class="questions__sign">
 						<span class="questions__line questions__line--1"></span>
@@ -428,7 +428,7 @@
 						<svg class="questions__icon icon mr-4">
 							<use xlink:href="img/icons.svg#question" />
 						</svg>
-						<div class="questions__name-text">Не нашел нужную услугу на сайте, как я могу связаться и уточнить что мне нужно?</div>
+						<div class="questions__name-text font-alt">Не нашел нужную услугу на сайте, как я могу связаться и уточнить что мне нужно?</div>
 					</div>
 					<div class="questions__sign">
 						<span class="questions__line questions__line--1"></span>
@@ -447,7 +447,7 @@
 						<svg class="questions__icon icon mr-4">
 							<use xlink:href="img/icons.svg#question" />
 						</svg>
-						<div class="questions__name-text">Как мы гарантируем сохранность вашего имущества?</div>
+						<div class="questions__name-text font-alt">Как мы гарантируем сохранность вашего имущества?</div>
 					</div>
 					<div class="questions__sign">
 						<span class="questions__line questions__line--1"></span>
@@ -466,7 +466,7 @@
 						<svg class="questions__icon icon mr-4">
 							<use xlink:href="img/icons.svg#question" />
 						</svg>
-						<div class="questions__name-text">Кому вы доверяете свои вещи?</div>
+						<div class="questions__name-text font-alt">Кому вы доверяете свои вещи?</div>
 					</div>
 					<div class="questions__sign">
 						<span class="questions__line questions__line--1"></span>
@@ -484,36 +484,50 @@
 
 	<section class="logistician">
 		<div class="logistician__block">
-			<div class="logistician__title"></div>
-			<div class="logistician__subtitle"></div>
-		</div>
-		<form class="logistician__form">
-			<div class="grid">
-				<div class="grid-col-6">
-					<label class="form-field">
-						<div class="text--demibold color-white">Имя</div>
-						<div class="form-input-cover">
-							<input type="text" class="form-input" placeholder="Введите имя">
-						</div>
-					</label>
-					<label class="form-field">
-						<div class="text--demibold color-white">Телефон</div>
-						<div class="form-input-cover">
-							<input type="text" class="form-input" placeholder="+7 ">
-						</div>
-					</label>
+			<div class="logistician__info">
+				<div class="logistician__title">
+					Задайте вопрос <br>
+					нашему логисту
 				</div>
-				<div class="grid-col-6">
-					<div class="form-input-cover">
-						<textarea class="form-input" placeholder="Напишите здесь..."></textarea>
-					</div>
-				</div>
-				<div class="grid-col-12">
-					<!-- <div class="fle"></div> -->
-					<button class="btn btn--primary btn--fill mt-10 mx-auto" type="submit">Задать вопрос</button>
+				<div class="logistician__subtitle">
+					или получите бесплатный расчет <br>
+					стоимости доставки
 				</div>
 			</div>
-		</form>
+			<form class="logistician__form">
+				<div class="grid grid-spacing-7">
+					<div class="grid-col-12 grid-col-lg-6">
+						<label class="form-field mb-4">
+							<div class="logistician__name text--demibold mb-2">Имя</div>
+							<div class="form-input-cover">
+								<input type="text" class="form-input" placeholder="Введите имя">
+							</div>
+						</label>
+						<label class="form-field">
+							<div class="logistician__name text--demibold mb-2">Телефон</div>
+							<div class="form-input-cover">
+								<input type="text" class="form-input" placeholder="+7 ">
+							</div>
+						</label>
+					</div>
+					<div class="grid-col-12 grid-col-lg-6">
+						<div class="logistician__name text--demibold mb-2">Ваш вопрос</div>
+						<div class="form-input-cover logistician__textarea">
+							<textarea class="form-input h-100" placeholder="Напишите здесь..."></textarea>
+						</div>
+					</div>
+					<div class="grid-col-12">
+						<div class="logistician__items flex flex-align-center">
+							<button class="logistician__btn btn btn--primary btn--fill mr-5" type="submit">Задать вопрос</button>
+							<span class="logistician__politic">
+								Отправляя форму Вы даете согласие на обработку <br>
+								Ваших персональных данных
+							</span>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
 	</section>
 
 
