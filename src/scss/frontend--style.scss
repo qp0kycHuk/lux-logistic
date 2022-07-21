@@ -221,7 +221,7 @@ body {
 	padding-bottom: 52px;
 	position      : relative;
 	background    : #FFFFFF;
-	overflow: hidden;
+	overflow      : hidden;
 
 	@media (max-width:$md) {
 		padding-top   : 24px;
@@ -679,17 +679,17 @@ body {
 }
 
 .slider-reviews {
-	&__btn {
-		width           : 44px;
-		height          : 44px;
-		box-shadow      : 0px 6px 15px rgba(0, 0, 0, 0.16);
-		border-radius   : 50%;
-		background-color: #fff;
-		display         : flex;
-		align-items     : center;
-		justify-content : center;
-		font-size       : 10px;
-	}
+	// &__btn {
+	// 	width           : 44px;
+	// 	height          : 44px;
+	// 	box-shadow      : 0px 6px 15px rgba(0, 0, 0, 0.16);
+	// 	border-radius   : 50%;
+	// 	background-color: #fff;
+	// 	display         : flex;
+	// 	align-items     : center;
+	// 	justify-content : center;
+	// 	font-size       : 10px;
+	// }
 }
 
 .questions {
@@ -726,6 +726,14 @@ body {
 		display        : flex;
 		justify-content: space-between;
 		align-items    : center;
+		cursor         : pointer;
+		position       : relative;
+
+		&:before {
+			content : '';
+			position: absolute;
+			inset   : -10px;
+		}
 	}
 
 	&__name {
@@ -746,10 +754,10 @@ body {
 	}
 
 	&__sign {
-		position: relative;
-		min-width   : 16px;
-		height  : 16px;
-		cursor  : pointer;
+		position : relative;
+		min-width: 16px;
+		height   : 16px;
+		cursor   : pointer;
 	}
 
 	&__line {
@@ -795,6 +803,7 @@ body {
 			border          : none !important;
 			margin-bottom   : 8px;
 		}
+
 		&__head {
 			padding: 15px;
 		}
@@ -812,8 +821,8 @@ body {
 		}
 
 		&__sign {
-			min-width : 14px;
-			height: 14px;
+			min-width: 14px;
+			height   : 14px;
 		}
 
 		&__line {
@@ -1291,46 +1300,59 @@ body {
 	overflow     : hidden;
 }
 
-.-el- {
-    &hid- {
-        opacity: 0;
-        transition-property: opacity, transform;
-        transition-duration: 0.7s;
-        transition-timing-function: linear;
-    }
-    &up- {
-        transform: translateY(50px);
-    }
-    &down- {
-        transform: translateY(-50px);
-    }
-    &left- {
-        transform: translateX(50px);
-    }
-    &right- {
-        transform: translateX(-50px);
-    }
-    &show- {
-        opacity: 1;
-        transform: translate(0);
-    }
+.-el {
+	&-hid- {
+		transition-property       : opacity, transform;
+		transition-duration       : 0.35s;
+		transition-timing-function: ease;
+	}
+
+	&-up-:not(&-show-) {
+		transform: translateY(50px);
+		opacity  : 0;
+	}
+
+	&-down-:not(&-show-) {
+		transform: translateY(-50px);
+		opacity  : 0;
+	}
+
+	&-left-:not(&-show-) {
+		transform: translateX(50px);
+		opacity  : 0;
+	}
+
+	&-right-:not(&-show-) {
+		transform: translateX(-50px);
+		opacity  : 0;
+	}
+
+	// &show-:not(&show-) {
+	//     opacity: 1;
+	//     transform: translate(0);
+	// }
 }
 
-$transition: 'ease', 'ease-in', 'ease-out', 'ease-in-out', 'linear';
+$transition: 'ease',
+'ease-in',
+'ease-out',
+'ease-in-out',
+'linear';
+
 @each $value in $transition {
-    .-#{$value}- {
-        transition-timing-function: #{$value};
-    }
+	.-#{$value}- {
+		transition-timing-function: #{$value};
+	}
 }
 
 @for $i from 1 to 11 {
-    .-duration-#{calc($i * 100)}- {
-        transition-duration: #{calc($i / 10) + s};
-    }
+	.-duration-#{calc($i * 100)}- {
+		transition-duration: #{calc($i / 10) + s};
+	}
 }
 
 @for $i from 1 to 11 {
-    .-delay-#{calc($i * 100)}- {
-        transition-delay: #{calc($i / 10) + s};
-    }
+	.-delay-#{calc($i * 100)}- {
+		transition-delay: #{calc($i / 10) + s};
+	}
 }
