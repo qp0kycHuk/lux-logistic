@@ -8,6 +8,7 @@ import ripple from 'npm-kit-ripple';
 import Swiper, { Navigation, Pagination, Scrollbar, Autoplay, Grid, Thumbs, EffectFade, Lazy } from 'swiper';
 import ymaps from 'ymaps';
 import scrolled from './js/scrolled'
+import maskTel from './js/mask-tel'
 
 import 'npm-kit-ripple/index.css';
 import 'swiper/css';
@@ -36,6 +37,7 @@ function loadHandler() {
 	ripple.init();
 	theme.init();
 	scrolled.init()
+	maskTel.init()
 
 	ripple.attach('.btn')
 	ripple.attach('.waved')
@@ -55,12 +57,21 @@ function loadHandler() {
 
 			const map = new maps.Map('map', {
 
-				center: [45.03191007458623, 38.921171499999936],
-				zoom: 16
+				center: [45.06611530619296,38.985679499999996],
+				zoom: 7
 
 			})
 
-			const placemark = new maps.Placemark([45.03191007458623, 38.921171499999936], {}, {
+			const placemark = new maps.Placemark([45.06611530619296,38.985679499999996], {}, {
+
+				iconLayout: 'default#image',
+				iconImageHref: '../img/geo.png',
+				iconImageSize: [72, 72],
+				iconImageOffset: [-20, -50]
+
+			})
+
+			const placemark_2 = new maps.Placemark([44.109767863084514,39.07521900000001], {}, {
 
 				iconLayout: 'default#image',
 				iconImageHref: '../img/geo.png',
@@ -78,6 +89,7 @@ function loadHandler() {
 			map.controls.remove('rulerControl')
 			map.behaviors.disable(['scrollZoom'])
 			map.geoObjects.add(placemark)
+			map.geoObjects.add(placemark_2)
 		})
 		.catch(error => console.log('Failed to load Yandex Maps', error));
 }
