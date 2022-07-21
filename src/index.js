@@ -6,7 +6,7 @@ import tab from 'npm-kit-tab';
 import toggle from 'npm-kit-toggle';
 import ripple from 'npm-kit-ripple';
 import Swiper, { Navigation, Pagination, Scrollbar, Autoplay, Grid, Thumbs, EffectFade, Lazy } from 'swiper';
-
+import ymaps from 'ymaps';
 
 import 'npm-kit-ripple/index.css';
 import 'swiper/css';
@@ -41,5 +41,14 @@ function loadHandler() {
 
 	setPlaceholders();
 
+	ymaps
+		.load()
+		.then(maps => {
+			const inputs = [...document.querySelectorAll('[data-suggest-view]')]
+			inputs.forEach((input) => {
+				new maps.SuggestView(input, { results: 5, container: document.body });
+			})
+		})
+		.catch(error => console.log('Failed to load Yandex Maps', error));
 }
 

@@ -91,6 +91,33 @@
 					<img src="img/started-pray.png" alt="">
 				</div>
 			</div>
+			<div class="started__form with-suggest">
+				<div class="form-field mb-4">
+					<div class="form-input-cover">
+						<input type="text" class="form-input" placeholder="Откуда" data-suggest-view>
+					</div>
+				</div>
+				<div class="form-field mb-4">
+					<div class="form-input-cover">
+						<input type="text" class="form-input" placeholder="Куда" data-suggest-view>
+					</div>
+				</div>
+				<div class="form-field">
+					<div class="form-input-cover">
+						<input type="text" class="form-input" placeholder="Номер телефона">
+					</div>
+				</div>
+				<button class="btn btn--primary btn--fill mt-5 text-body-2 text--demibold w-100">
+					<svg class="icon mr-2">
+						<use xlink:href="img/icons.svg#calculator" />
+					</svg>
+					Рассчитать стоимость
+				</button>
+				<div class="text-small-1 mt-4 fade-60">
+					Отправляя форму Вы даете согласие на обработку
+					Ваших персональных данных
+				</div>
+			</div>
 		</div>
 		<div class="started__img">
 			<img src="img/started-track.png" alt="">
@@ -107,8 +134,9 @@
 								<use xlink:href="img/icons.svg#shield-check" />
 							</svg>
 							<div>
-								<div class="text--demibold font-alt mb-1">Страхование груза</div>
-								<div class="text-body-2 font-alt fade-60">
+								<div class="text-body-2 text-md-body-1 text--demibold font-alt mb-1">Страхование груза
+								</div>
+								<div class="text-small text-md-body-2 font-alt fade-60">
 									Если требуется дополнительная гарантия,
 									мы оформим страховой полис на Ваше имя
 									у наших партнеров
@@ -122,8 +150,9 @@
 								<use xlink:href="img/icons.svg#doc" />
 							</svg>
 							<div>
-								<div class="text--demibold font-alt mb-1">Полный пакет документов</div>
-								<div class="text-body-2 font-alt fade-60">
+								<div class="text-body-2 text-md-body-1 text--demibold font-alt mb-1">Полный пакет
+									документов</div>
+								<div class="text-small text-md-body-2 font-alt fade-60">
 									Взаимодействие с бухгалтерией клиента,
 									отправка оригиналов закрывающих
 									документов в течение 2-х дней
@@ -137,8 +166,9 @@
 								<use xlink:href="img/icons.svg#user" />
 							</svg>
 							<div>
-								<div class="text--demibold font-alt mb-1">Персональный менеджер</div>
-								<div class="text-body-2 font-alt fade-60">
+								<div class="text-body-2 text-md-body-1 text--demibold font-alt mb-1">Персональный
+									менеджер</div>
+								<div class="text-small text-md-body-2 font-alt fade-60">
 									За каждым клиентом закрепляется
 									индивидуальный менеджер, который
 									будет на связи 24/7
@@ -148,12 +178,12 @@
 					</div>
 				</div>
 			</div>
-			<button class="btn btn-small btn-fab btn--white-bg slider-nav slider-prev d-lg-none">
+			<button class="btn btn-xsmall btn-fab btn--white-bg slider-nav slider-prev d-lg-none">
 				<svg class="icon">
 					<use xlink:href="./img/icons.svg#to-left" />
 				</svg>
 			</button>
-			<button class="btn btn-small btn-fab btn--white-bg slider-nav slider-next d-lg-none">
+			<button class="btn btn-xsmall btn-fab btn--white-bg slider-nav slider-next d-lg-none">
 				<svg class="icon">
 					<use xlink:href="./img/icons.svg#to-right" />
 				</svg>
@@ -212,17 +242,24 @@
 			Ознакомьтесь внимательно с нашими преимуществами и будьте уверены в своем выборе
 		</div>
 
-		<div class="grid">
-			<div class="grid-col-12 grid-col-md-6 grid-col-lg-4">
-				<div class="advantages-item">
-					<img src="img/advantages/1.png" alt="" class="icon">
-					<div class="font-alt">
-						<div class="text--demibold color-red">Работа с ЮР/ФИЗ лицами</div>
-						<div class="text-body-2 fade-60">
-							Подберем оптимальные условия
-							перевозки в максимально сжатые сроки
+		<div class="advantages-slider">
+			<div class="swiper ">
+				<div class="swiper-wrapper">
+					<% for(let i=0; i < 6; i++){ %>
+
+						<div class="advantages-item swiper-slide">
+							<img src="img/advantages/1.png" alt="" class="icon">
+							<div class="font-alt">
+								<div class="text-body-2 text-md-body-1 text--demibold color-red mb-1 mb-md-0">Работа с
+									ЮР/ФИЗ лицами</div>
+								<div class="text-small text-md-body-2 fade-60">
+									Подберем оптимальные условия
+									перевозки в максимально сжатые сроки
+								</div>
+							</div>
 						</div>
-					</div>
+
+						<% } %>
 				</div>
 			</div>
 		</div>
@@ -244,21 +281,23 @@
 							</div>
 						</label>
 					</div>
-					<div class="grid-col-6">
-						<label class="form-field">
-							<div class="text--demibold color-white">Откуда выезд</div>
+					<div class="grid-col-md-6">
+						<div class="form-field">
+							<div class="text--demibold color-white d-none d-md-block">Откуда выезд</div>
 							<div class="form-input-cover">
-								<input type="text" class="form-input" placeholder="Укажите адрес...">
+								<input type="text" class="form-input" placeholder="Укажите адрес..."
+									data-mobile-placeholder="Откуда" data-suggest-view>
 							</div>
-						</label>
+						</div>
 					</div>
-					<div class="grid-col-6">
-						<label class="form-field">
-							<div class="text--demibold color-white">Куда везем</div>
+					<div class="grid-col-md-6">
+						<div class="form-field">
+							<div class="text--demibold color-white d-none d-md-block">Куда везем</div>
 							<div class="form-input-cover">
-								<input type="text" class="form-input" placeholder="Укажите адрес...">
+								<input type="text" class="form-input" placeholder="Укажите адрес..."
+									data-mobile-placeholder="Куда" data-suggest-view>
 							</div>
-						</label>
+						</div>
 					</div>
 				</div>
 			</div>

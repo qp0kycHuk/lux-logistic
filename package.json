@@ -39,6 +39,7 @@
     "npm-kit-ripple": "^1.0.2",
     "npm-kit-tab": "^1.0.0",
     "npm-kit-toggle": "^1.0.5",
-    "swiper": "^8.2.4"
+    "swiper": "^8.2.4",
+    "ymaps": "^0.2.1"
   }
 }
