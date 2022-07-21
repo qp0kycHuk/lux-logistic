@@ -826,4 +826,56 @@ body {
 		font-size  : 42px;
 		line-height: 57px;
 	}
+
+	&__bottom {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+	&__item {
+		display: flex;
+		align-items: center;
+	}
+	&__img {
+		margin-right: 24px;
+	}
+	&__info {
+		display: flex;
+		flex-direction: column;
+	}
+	&__subtitle {
+		font-weight: 700;
+		font-size: 22px;
+		line-height: 30px;
+	}
+	&__img {
+		&--1 {
+			font-size: 82px;
+		}
+		&--2 {
+			font-size: 50px;
+		}
+		&--3 {
+			font-size: 50px;
+		}
+	}
+	&__text {
+		&--1 {
+			font-weight: 300;
+			font-size: 14px;
+			line-height: 17px;
+			font-feature-settings: 'calt' off, 'liga' off;
+			opacity: 0.6;
+		}
+		&--2 {
+			font-weight: 400;
+			font-size: 16px;
+		}
+		&--3 {
+			font-weight: 600;
+			font-size: 16px;
+			border-bottom: 2px dotted #fff;
+			opacity: 0.6;
+		}
+	}
 }
