@@ -842,6 +842,10 @@ body {
 			right     : 0;
 			bottom    : -18px;
 			background: url("../img/pray-boxes.png") no-repeat right / contain;
+
+			@media (max-width:$lg) {
+				display: none;
+			}
 		}
 
 		&__header {
