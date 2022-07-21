@@ -148,7 +148,7 @@ body {
 		}
 
 		@media (max-width:$md) {
-			font-size    : 28px;
+			font-size    : 24px;
 			margin-bottom: 12px;
 		}
 	}
@@ -226,6 +226,11 @@ body {
 		}
 	}
 
+	&__form {
+		width     : 255px;
+		margin-top: 42px;
+	}
+
 	&__img {
 		position: absolute;
 		left    : 50%;
@@ -235,12 +240,14 @@ body {
 		display : flex;
 
 		@media (max-width:$lg) {
-			left: 75%;
+			left: 68%;
 		}
 
 		@media (max-width:$md) {
-			top   : 122px;
-			bottom: 162px;
+			top   : auto;
+			left  : 254px;
+			height: 332px;
+			bottom: 38px;
 		}
 
 		img {
@@ -260,9 +267,13 @@ body {
 .fitches {
 	padding-top   : 0;
 	padding-bottom: 0;
-	position      : relative;
-	z-index       : 2;
-	background    : #FFFFFF;
+
+	background: #FFFFFF;
+
+	@media (max-width:$md) {
+		padding-left : 24px;
+		padding-right: 24px;
+	}
 
 	&-block {
 		background   : #FFFFFF;
@@ -272,6 +283,18 @@ body {
 		padding      : 25px 40px;
 		position     : relative;
 		margin-bottom: -62px;
+		position     : relative;
+		z-index      : 2;
+
+		@media (max-width:$md) {
+			padding: 12px 20px;
+		}
+
+		.swiper-slide {
+			@media (max-width:$md) {
+				align-self: center;
+			}
+		}
 
 		.slider-prev {
 			top  : calc(50% - var(--size) / 2);
@@ -290,10 +313,17 @@ body {
 		display    : flex;
 		align-items: center;
 
+
+
 		.icon {
 			font-size   : 48px;
 			margin-right: 24px;
 			color       : var(--color-primary);
+
+			@media (max-width:$md) {
+				font-size   : 38px;
+				margin-right: 16px;
+			}
 		}
 	}
 }
@@ -344,12 +374,20 @@ body {
 		padding-bottom: 22px;
 	}
 
+	@media (max-width:$md) {
+		padding-top: 84px;
+	}
+
 	&__title {
 		margin-bottom: 8px;
 	}
 
 	&__subtitle {
 		margin-bottom: 48px;
+
+		@media (max-width:$md) {
+			margin-bottom: 30px;
+		}
 	}
 
 	&-item {
@@ -482,7 +520,10 @@ body {
 	}
 }
 
-
+.with-suggest {
+	position: relative;
+	z-index : 321;
+}
 
 .reviews {
 	background-color: rgba(255, 255, 255, 0.8);
