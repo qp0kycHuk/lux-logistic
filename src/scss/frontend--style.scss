@@ -88,6 +88,16 @@ body {
 	top            : 0;
 	z-index        : var(--zi-l2);
 	background     : #ECECEC;
+	transition     : .25s ease;
+
+	@media (max-width:$lg) {
+		display: none;
+	}
+
+	&:not(.scrolled) {
+		transform     : translateY(-100%);
+		pointer-events: none;
+	}
 
 	&__item {
 		font-weight: 400;
@@ -107,13 +117,67 @@ body {
 	}
 }
 
+.menu {
+	position      : fixed;
+	left          : 0;
+	top           : 0;
+	height        : 100%;
+	width         : 351px;
+	z-index       : var(--zi-l5);
+	background    : var(--bg3);
+	overflow      : auto;
+	display       : flex;
+	flex-direction: column;
+	transition    : .25s ease;
+
+	&:not(.toggle-active) {
+		opacity       : 0;
+		transform     : translateX(-100%);
+		pointer-events: none;
+	}
+
+
+	&__header {
+		padding-left : 15px;
+		padding-right: 15px;
+	}
+
+	&-shadow {
+		position  : fixed;
+		left      : 0;
+		top       : 0;
+		width     : 100%;
+		height    : 100%;
+		background: rgba(0, 0, 0, 0.5);
+		z-index   : var(--zi-l4);
+		transition: .25s ease;
+	}
+
+	&:not(.toggle-active)+&-shadow {
+		opacity       : 0;
+		pointer-events: none;
+	}
+
+	&-contact {
+		display        : flex;
+		align-items    : center;
+		justify-content: flex-start;
+
+		.icon {
+			font-size   : 32px;
+			color       : var(--color-primary);
+			margin-right: 16px;
+		}
+	}
+}
+
 .header {
 	display    : flex;
 	align-items: center;
 	padding-top: 24px;
 	background : #FFFFFF;
 
-	@media (max-width:$md) {
+	@media (max-width:$lg) {
 		background    : #F6F6F6;
 		padding-top   : 6px;
 		padding-bottom: 6px;
@@ -774,19 +838,36 @@ body {
 	&-form {
 		background   : #353332;
 		border-radius: 24px;
+		position     : relative;
+
+		&:before {
+			content   : '';
+			position  : absolute;
+			left      : 0;
+			top       : 0;
+			right     : 0;
+			bottom    : -18px;
+			background: url("../img/pray-boxes.png") no-repeat right / contain;
+		}
 
 		&__header {
 			padding      : 32px 72px;
 			border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+			position     : relative;
+			z-index      : 2;
 		}
 
 		&__sect {
 			padding      : 40px 72px;
 			border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+			position     : relative;
+			z-index      : 2;
 		}
 
 		&__footer {
-			padding: 24px 72px 64px;
+			padding : 24px 72px 64px;
+			position: relative;
+			z-index : 2;
 		}
 
 		&__header,

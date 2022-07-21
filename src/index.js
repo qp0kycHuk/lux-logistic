@@ -41,6 +41,7 @@ function loadHandler() {
 
 	setPlaceholders();
 	document.addEventListener('click', clickHandler);
+	window.addEventListener('scroll', scrollHandler);
 
 	ymaps
 		.load()
@@ -106,4 +107,15 @@ function clickHandler(event) {
 
 
 
+}
+
+function scrollHandler() {
+	const nav = document.querySelector('.nav');
+	if (window.pageYOffset > 10) {
+		nav.classList.add('scrolled')
+		
+	}else{
+		nav.classList.remove('scrolled')
+		
+	}
 }

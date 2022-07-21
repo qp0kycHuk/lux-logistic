@@ -10,7 +10,7 @@
 
 <body>
 	<div id="top"></div>
-	<section class="nav">                                                                                                                     
+	<section class="nav">
 		<button data-scroll="#top" class="nav__item btn btn--link btn--primary color-text">Главная</button>
 		<button data-scroll="#types" class="nav__item btn btn--link btn--primary color-text">Виды грузов</button>
 		<button data-scroll="#advantages" class="nav__item btn btn--link btn--primary color-text">Преимущества</button>
@@ -19,7 +19,13 @@
 		<button data-scroll="#questions" class="nav__item btn btn--link btn--primary color-text">Вопрос-ответ</button>
 		<button data-scroll="#footer" class="nav__item btn btn--link btn--primary color-text">Контакты</button>
 	</section>
+
 	<header class="header">
+		<button class="btn btn-small mr-4 btn--primary btn--link p-2 d-lg-none" data-toggle-link="menu">
+			<svg class="icon text-subtitle-1">
+				<use xlink:href="img/icons.svg#menu" />
+			</svg>
+		</button>
 		<div class="header-logo">
 			<div class="header-logo__img mr-3 mr-lg-6">
 				<img src="img/logo.svg" alt="">
@@ -54,7 +60,83 @@
 					звонок</button>
 			</div>
 		</a>
+		<a href="javascript:;" class="btn btn-small ml-auto btn--primary btn--link p-2 d-lg-none">
+			<svg class="icon text-subtitle-1">
+				<use xlink:href="img/icons.svg#phone-contur" />
+			</svg>
+		</a>
 	</header>
+
+	<div class="menu" id="menu">
+		<header class="header menu__header">
+			<button class="btn btn-small mr-4 btn--primary btn--link p-2 d-lg-none" data-toggle-link="menu">
+				<svg class="icon text-subtitle-1">
+					<use xlink:href="img/icons.svg#cross" />
+				</svg>
+			</button>
+			<div class="header-logo">
+				<div class="header-logo__img mr-3 mr-lg-6">
+					<img src="img/logo.svg" alt="">
+				</div>
+				<div class="header-logo__text">
+					<div class="text-small text-lg-subtitle-1 text-md-body-0 text--demibold">Люкс Логистик</div>
+					<div class="text-small text-lg-body-2 fade-60 font-alt">
+						Логистическая компания <br>
+						<span class="d-none d-lg-block">
+							междугородных перевозок
+						</span>
+					</div>
+				</div>
+			</div>
+		</header>
+		<div class="menu__list">
+			<button
+				class="menu__item btn btn--primary btn--link color-text p-4 w-100 flex-justify-start">Главная</button>
+			<button class="menu__item btn btn--primary btn--link color-text p-4 w-100 flex-justify-start">Виды
+				грузов</button>
+			<button
+				class="menu__item btn btn--primary btn--link color-text p-4 w-100 flex-justify-start">Преимущества</button>
+			<button
+				class="menu__item btn btn--primary btn--link color-text p-4 w-100 flex-justify-start">Автопарк</button>
+			<button
+				class="menu__item btn btn--primary btn--link color-text p-4 w-100 flex-justify-start">Отзывы</button>
+			<button
+				class="menu__item btn btn--primary btn--link color-text p-4 w-100 flex-justify-start">Вопрос-ответ</button>
+			<button
+				class="menu__item btn btn--primary btn--link color-text p-4 w-100 flex-justify-start">Конакты</button>
+		</div>
+		<div class="px-4">
+			<button class="btn btn--primary btn--fill mt-5 mb-5 w-100">
+				<svg class="icon mr-2">
+					<use xlink:href="img/icons.svg#calculator" />
+				</svg>
+				Рассчитать стоимость
+			</button>
+		</div>
+		<div class="px-4 mt-auto pb-7">
+			<a href="javascript:;" class="menu-contact btn btn--primary btn--link mt-auto">
+				<svg class="icon">
+					<use xlink:href="img/icons.svg#email-contur" />
+				</svg>
+				<div class="font-alt color-text">
+					<div class="text-subtitle-2 lh-1">Luks.logistik@yandex.ru</div>
+					<div class="text-body-2 ">Пишите по всем вопросам</div>
+				</div>
+			</a>
+			<a href="javascript:;" class="menu-contact btn btn--primary btn--link mt-5">
+				<svg class="icon">
+					<use xlink:href="img/icons.svg#phone-contur" />
+				</svg>
+				<div class="font-alt">
+					<div class="text-subtitle-2 lh-1 color-text font-alt">8 800 600 54 88</div>
+					<button class="btn btn--primary btn--link text--dashed text-body-2 text--demibold font-alt">Заказать
+						обратный
+						звонок</button>
+				</div>
+			</a>
+		</div>
+	</div>
+	<div class="menu-shadow"></div>
 
 	<section class="started">
 		<div class="started__content">
@@ -524,7 +606,8 @@
 						<svg class="questions__icon icon mr-4">
 							<use xlink:href="img/icons.svg#question" />
 						</svg>
-						<div class="questions__name-text font-alt">Не нашел нужную услугу на сайте, как я могу связаться и
+						<div class="questions__name-text font-alt">Не нашел нужную услугу на сайте, как я могу связаться
+							и
 							уточнить что мне нужно?</div>
 					</div>
 					<div class="questions__sign">
@@ -549,7 +632,8 @@
 						<svg class="questions__icon icon mr-4">
 							<use xlink:href="img/icons.svg#question" />
 						</svg>
-						<div class="questions__name-text font-alt">Не нашел нужную услугу на сайте, как я могу связаться и
+						<div class="questions__name-text font-alt">Не нашел нужную услугу на сайте, как я могу связаться
+							и
 							уточнить что мне нужно?</div>
 					</div>
 					<div class="questions__sign">
@@ -574,7 +658,8 @@
 						<svg class="questions__icon icon mr-4">
 							<use xlink:href="img/icons.svg#question" />
 						</svg>
-						<div class="questions__name-text font-alt">Как мы гарантируем сохранность вашего имущества?</div>
+						<div class="questions__name-text font-alt">Как мы гарантируем сохранность вашего имущества?
+						</div>
 					</div>
 					<div class="questions__sign">
 						<span class="questions__line questions__line--1"></span>
@@ -655,7 +740,8 @@
 					</div>
 					<div class="grid-col-12">
 						<div class="logistician__items flex flex-align-center">
-							<button class="logistician__btn btn btn--primary btn--fill mr-5" type="submit">Задать вопрос</button>
+							<button class="logistician__btn btn btn--primary btn--fill mr-5" type="submit">Задать
+								вопрос</button>
 							<span class="logistician__politic">
 								Отправляя форму Вы даете согласие на обработку <br>
 								Ваших персональных данных
@@ -704,7 +790,8 @@
 					<img class="icon" src="img/Message.svg" alt="">
 				</div>
 				<div class="footer__info">
-					<a class="footer__link footer__link--mail font-alt" href="mailto: Luks.logistik@yandex.ru">Luks.logistik@yandex.ru</a>
+					<a class="footer__link footer__link--mail"
+						href="mailto: Luks.logistik@yandex.ru">Luks.logistik@yandex.ru</a>
 					<div class="footer__text footer__text--2">Пишите по всем вопросам</div>
 				</div>
 			</div>
@@ -719,7 +806,7 @@
 			</div>
 		</div>
 	</footer>
-	
+
 </body>
 
 </html>
