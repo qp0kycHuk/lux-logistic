@@ -7,6 +7,7 @@ import toggle from 'npm-kit-toggle';
 import ripple from 'npm-kit-ripple';
 import Swiper, { Navigation, Pagination, Scrollbar, Autoplay, Grid, Thumbs, EffectFade, Lazy } from 'swiper';
 import ymaps from 'ymaps';
+import scrolled from './js/scrolled'
 
 import 'npm-kit-ripple/index.css';
 import 'swiper/css';
@@ -34,6 +35,7 @@ function loadHandler() {
 	toggle.init();
 	ripple.init();
 	theme.init();
+	scrolled.init()
 
 	ripple.attach('.btn')
 	ripple.attach('.waved')
@@ -61,8 +63,8 @@ function loadHandler() {
 			const placemark = new maps.Placemark([45.03191007458623,38.921171499999936], {}, {
 		
 				iconLayout: 'default#image',
-				// iconImageHref: '../img/pictures/geo.png',
-				iconImageSize: [40, 50],
+				iconImageHref: '../img/geo.png',
+				iconImageSize: [72, 72],
 				iconImageOffset: [-20, -50]
 				
 			})

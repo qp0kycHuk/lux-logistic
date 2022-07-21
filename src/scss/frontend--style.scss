@@ -221,6 +221,7 @@ body {
 	padding-bottom: 52px;
 	position      : relative;
 	background    : #FFFFFF;
+	overflow: hidden;
 
 	@media (max-width:$md) {
 		padding-top   : 24px;
@@ -746,7 +747,7 @@ body {
 
 	&__sign {
 		position: relative;
-		width   : 16px;
+		min-width   : 16px;
 		height  : 16px;
 		cursor  : pointer;
 	}
@@ -777,7 +778,7 @@ body {
 
 	@media(max-width: $md) {
 		padding-top   : 43px;
-		padding-bottom: 43px;
+		padding-bottom: 23px;
 
 		&__title {
 			margin-bottom: 8px;
@@ -790,9 +791,12 @@ body {
 		&__item {
 			background-color: #FFFFFF;
 			border-radius   : 12px;
-			padding         : 15px;
+			padding         : 0;
 			border          : none !important;
 			margin-bottom   : 8px;
+		}
+		&__head {
+			padding: 15px;
 		}
 
 		&__icon {
@@ -808,7 +812,7 @@ body {
 		}
 
 		&__sign {
-			width : 14px;
+			min-width : 14px;
 			height: 14px;
 		}
 
@@ -818,7 +822,6 @@ body {
 
 		&__text {
 			border-top : 1px solid #D9D9D9;
-			margin-top : 20px;
 			padding    : 15px;
 			font-weight: 400;
 			font-size  : 12px;
@@ -972,7 +975,7 @@ body {
 		display        : flex;
 		flex-direction : column;
 		justify-content: center;
-		padding-left   : 30px;
+		padding-left   : 60px;
 	}
 
 	&__title {
@@ -1282,4 +1285,48 @@ body {
 	height       : 300px;
 	border-radius: 16px;
 	overflow     : hidden;
+}
+
+.-el- {
+    &hid- {
+        opacity: 0;
+        transition-property: opacity, transform;
+        transition-duration: 0.7s;
+        transition-timing-function: linear;
+    }
+    &up- {
+        transform: translateY(50px);
+    }
+    &down- {
+        transform: translateY(-50px);
+    }
+    &left- {
+        transform: translateX(50px);
+    }
+    &right- {
+        transform: translateX(-50px);
+    }
+    &show- {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+$transition: 'ease', 'ease-in', 'ease-out', 'ease-in-out', 'linear';
+@each $value in $transition {
+    .-#{$value}- {
+        transition-timing-function: #{$value};
+    }
+}
+
+@for $i from 1 to 11 {
+    .-duration-#{calc($i * 100)}- {
+        transition-duration: #{calc($i / 10) + s};
+    }
+}
+
+@for $i from 1 to 11 {
+    .-delay-#{calc($i * 100)}- {
+        transition-delay: #{calc($i / 10) + s};
+    }
 }
