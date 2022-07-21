@@ -50,6 +50,10 @@
 		background-color: var(--bg3);
 		border          : 1px solid var(--color-text-10);
 
+		@media (max-width:$md) {
+			height: 42px;
+		}
+
 		&:first-of-type {
 			border-start-start-radius: var(--radius-small);
 			border-end-start-radius  : var(--radius-small);
