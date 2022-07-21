@@ -221,6 +221,7 @@ body {
 	padding-bottom: 52px;
 	position      : relative;
 	background    : #FFFFFF;
+	overflow: hidden;
 
 	@media (max-width:$md) {
 		padding-top   : 24px;
@@ -657,6 +658,8 @@ body {
 	}
 
 	@media(max-width: $md) {
+		margin        : 0;
+		border-radius : 0;
 		padding-top   : 26px;
 		padding-bottom: 48px;
 
@@ -666,6 +669,11 @@ body {
 
 		&__subtitle {
 			margin-bottom: 30px;
+		}
+
+		&__item {
+			max-width: 285px;
+			margin   : 0 auto;
 		}
 	}
 }
@@ -739,7 +747,7 @@ body {
 
 	&__sign {
 		position: relative;
-		width   : 16px;
+		min-width   : 16px;
 		height  : 16px;
 		cursor  : pointer;
 	}
@@ -770,7 +778,7 @@ body {
 
 	@media(max-width: $md) {
 		padding-top   : 43px;
-		padding-bottom: 43px;
+		padding-bottom: 23px;
 
 		&__title {
 			margin-bottom: 8px;
@@ -783,9 +791,12 @@ body {
 		&__item {
 			background-color: #FFFFFF;
 			border-radius   : 12px;
-			padding         : 15px;
+			padding         : 0;
 			border          : none !important;
 			margin-bottom   : 8px;
+		}
+		&__head {
+			padding: 15px;
 		}
 
 		&__icon {
@@ -801,7 +812,7 @@ body {
 		}
 
 		&__sign {
-			width : 14px;
+			min-width : 14px;
 			height: 14px;
 		}
 
@@ -811,7 +822,6 @@ body {
 
 		&__text {
 			border-top : 1px solid #D9D9D9;
-			margin-top : 20px;
 			padding    : 15px;
 			font-weight: 400;
 			font-size  : 12px;
@@ -969,7 +979,7 @@ body {
 		display        : flex;
 		flex-direction : column;
 		justify-content: center;
-		padding-left   : 30px;
+		padding-left   : 60px;
 	}
 
 	&__title {
@@ -1080,6 +1090,7 @@ body {
 	padding-top     : 34px;
 	padding-bottom  : 54px;
 	background-color: #413E3D;
+	overflow        : hidden;
 
 	&__top {
 		display        : flex;
@@ -1092,6 +1103,45 @@ body {
 		font-weight: 600;
 		font-size  : 42px;
 		line-height: 57px;
+	}
+
+	&__map {
+		margin-bottom: 47px;
+	}
+
+	&__head {
+		width        : max-content;
+		font-weight  : 600;
+		font-size    : 14px;
+		border-bottom: 1px dashed rgba(255, 255, 255, 0.6);
+		position     : relative;
+		cursor       : pointer;
+
+		&::after,
+		&::before {
+			content         : "";
+			background-color: rgba(217, 217, 217, 0.2);
+			width           : 540px;
+			height          : 1px;
+			position        : absolute;
+			top             : 0;
+			bottom          : 0;
+			margin          : auto 0;
+		}
+
+		&::before {
+			left: -550px;
+		}
+
+		&::after {
+			right: -550px;
+		}
+
+		&-item {
+			&--2 {
+				display: none;
+			}
+		}
 	}
 
 	&__bottom {
@@ -1134,7 +1184,25 @@ body {
 		}
 	}
 
+	&__link {
+		font-weight: 600;
+
+		&--mail {
+			font-size: 20px;
+		}
+
+		&--tel {
+			font-size: 22px;
+		}
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
 	&__text {
+		width: max-content;
+
 		&--1 {
 			font-weight          : 300;
 			font-size            : 14px;
@@ -1155,4 +1223,114 @@ body {
 			opacity      : 0.6;
 		}
 	}
+
+	@media(max-width: $lg) {
+		&__bottom {
+			flex-direction : column;
+			align-items    : flex-start;
+			justify-content: flex-start;
+		}
+
+		&__item {
+			margin-bottom: 24px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		&__img {
+			font-size   : 68px;
+			margin-right: 14px;
+		}
+	}
+
+	@media(max-width: $md) {
+		padding-top   : 26px;
+		padding-bottom: 52px;
+
+		&__top {
+			margin-bottom: 24px;
+		}
+
+		&__title {
+			font-weight: 600;
+			font-size  : 24px;
+		}
+
+		&__btn {
+			display: none;
+		}
+
+		&__map {
+			display: none;
+		}
+
+		&__item {
+			&--mail {
+				display: none;
+			}
+		}
+	}
+
+	&__text {
+		&--1 {
+			font-size: 12px;
+		}
+
+		&--3 {
+			font-size: 12px;
+		}
+	}
+}
+
+.map {
+	margin-top   : 50px;
+	height       : 300px;
+	border-radius: 16px;
+	overflow     : hidden;
+}
+
+.-el- {
+    &hid- {
+        opacity: 0;
+        transition-property: opacity, transform;
+        transition-duration: 0.7s;
+        transition-timing-function: linear;
+    }
+    &up- {
+        transform: translateY(50px);
+    }
+    &down- {
+        transform: translateY(-50px);
+    }
+    &left- {
+        transform: translateX(50px);
+    }
+    &right- {
+        transform: translateX(-50px);
+    }
+    &show- {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+$transition: 'ease', 'ease-in', 'ease-out', 'ease-in-out', 'linear';
+@each $value in $transition {
+    .-#{$value}- {
+        transition-timing-function: #{$value};
+    }
+}
+
+@for $i from 1 to 11 {
+    .-duration-#{calc($i * 100)}- {
+        transition-duration: #{calc($i / 10) + s};
+    }
+}
+
+@for $i from 1 to 11 {
+    .-delay-#{calc($i * 100)}- {
+        transition-delay: #{calc($i / 10) + s};
+    }
 }
