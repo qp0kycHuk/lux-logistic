@@ -7,6 +7,7 @@ import toggle from 'npm-kit-toggle';
 import ripple from 'npm-kit-ripple';
 import Swiper, { Navigation, Pagination, Scrollbar, Autoplay, Grid, Thumbs, EffectFade, Lazy } from 'swiper';
 import ymaps from 'ymaps';
+import scrolled from './js/scrolled'
 
 import 'npm-kit-ripple/index.css';
 import 'swiper/css';
@@ -34,6 +35,7 @@ function loadHandler() {
 	toggle.init();
 	ripple.init();
 	theme.init();
+	scrolled.init()
 
 	ripple.attach('.btn')
 	ripple.attach('.waved')
@@ -50,6 +52,32 @@ function loadHandler() {
 			inputs.forEach((input) => {
 				new maps.SuggestView(input, { results: 5, container: document.body });
 			})
+
+			const map = new maps.Map('map', {
+
+				center: [45.03191007458623,38.921171499999936],
+				zoom: 16
+	
+			})
+	
+			const placemark = new maps.Placemark([45.03191007458623,38.921171499999936], {}, {
+		
+				iconLayout: 'default#image',
+				iconImageHref: '../img/geo.png',
+				iconImageSize: [72, 72],
+				iconImageOffset: [-20, -50]
+				
+			})
+	
+			map.controls.remove('geolocationControl')
+			map.controls.remove('searchControl')
+			map.controls.remove('trafficControl')
+			map.controls.remove('typeSelector')
+			map.controls.remove('fullscreenControl')
+			map.controls.remove('zoomControl')
+			map.controls.remove('rulerControl')
+			map.behaviors.disable(['scrollZoom'])
+			map.geoObjects.add(placemark)
 		})
 		.catch(error => console.log('Failed to load Yandex Maps', error));
 }
