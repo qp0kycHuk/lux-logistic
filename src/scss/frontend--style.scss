@@ -1389,25 +1389,9 @@ body {
 		max-width: 410px;
 	}
 
-	// @media(max-width: $lg) {
-	// 	&__form {
-	// 		&--row {
-	// 			flex-direction: column;
-	// 			justify-content: flex-start;
-	// 			align-items: flex-start;
-	// 		}
-	// 	}
-	// 	&__desc {
-	// 		display: flex;
-	// 		align-items: center;
-	// 		justify-content: space-between;
-	// 		flex-direction: column;
-	// 		margin-bottom: 32px;
-	// 	}
-	// }
-
 	@media(max-width: $lg) {
 		padding: 35px 25px;
+		max-width: 340px;
 		&__title {
 			font-size: 22px;
 		}
@@ -1420,6 +1404,40 @@ body {
 		}
 		&__textarea {
 			min-height: 85px !important;
+		}
+		&__form {
+			&--row {
+				flex-direction: column;
+				justify-content: flex-start;
+				align-items: flex-start;
+			}
+		}
+		&__desc {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			flex-direction: column;
+			margin-bottom: 32px;
+		}
+		&__pic {
+			width: 100%;
+			min-width: auto;
+			height: 210px;
+			margin-bottom: 25px;
+		}
+		&__info {
+			&-title {
+				font-size: 18px;
+			}
+		}
+		&__listing li {
+			font-size: 14px;
+		}
+		&__text {
+			font-size: 14px;
+		}
+		&__btn {
+			width: 100%;
 		}
 	}
 }
