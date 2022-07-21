@@ -185,6 +185,9 @@ body {
 		background    : #F6F6F6;
 		padding-top   : 6px;
 		padding-bottom: 6px;
+		position      : sticky;
+		top           : 0;
+		z-index       : var(--zi-l3);
 
 	}
 
