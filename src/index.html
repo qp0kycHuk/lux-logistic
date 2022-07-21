@@ -39,7 +39,8 @@
 			</svg>
 			<div class="font-alt">
 				<div class="text-subtitle-2 lh-1 color-text font-alt">8 800 600 54 88</div>
-				<button class="btn btn--primary btn--link text--dashed text-body-2 text--demibold font-alt">Заказать обратный
+				<button class="btn btn--primary btn--link text--dashed text-body-2 text--demibold font-alt">Заказать
+					обратный
 					звонок</button>
 			</div>
 		</a>
@@ -212,85 +213,137 @@
 			Ознакомьтесь внимательно с нашими преимуществами и будьте уверены в своем выборе
 		</div>
 
-		<div class="grid">
-			<div class="grid-col-12 grid-col-md-6 grid-col-lg-4">
-				<div class="advantages-item">
-					<img src="img/advantages/1.png" alt="" class="icon">
-					<div class="font-alt">
-						<div class="text--demibold color-red">Работа с ЮР/ФИЗ лицами</div>
-						<div class="text-body-2 fade-60">
-							Подберем оптимальные условия
-							перевозки в максимально сжатые сроки
+		<div class="advantages-slider">
+			<div class="swiper ">
+				<div class="swiper-wrapper">
+					<% for(let i=0; i < 6; i++){ %>
+
+					<div class="advantages-item swiper-slide">
+						<img src="img/advantages/1.png" alt="" class="icon">
+						<div class="font-alt">
+							<div class="text-body-2 text-md-body-1 text--demibold color-red mb-1 mb-md-0">Работа с ЮР/ФИЗ лицами</div>
+							<div class="text-small text-md-body-2 fade-60">
+								Подберем оптимальные условия
+								перевозки в максимально сжатые сроки
+							</div>
 						</div>
 					</div>
+
+					<% } %>
 				</div>
+
 			</div>
+			<button class="btn btn-xsmall btn-fab btn--white-bg slider-nav slider-prev d-lg-none">
+				<svg class="icon">
+					<use xlink:href="./img/icons.svg#to-left" />
+				</svg>
+			</button>
+			<button class="btn btn-xsmall btn-fab btn--white-bg slider-nav slider-next d-lg-none">
+				<svg class="icon">
+					<use xlink:href="./img/icons.svg#to-right" />
+				</svg>
+			</button>
 		</div>
 	</section>
+	<script>
+		new Swiper('.advantages-slider .swiper', {
+			slidesPerView: 1,
+			watchSlidesProgress: true,
+			spaceBetween: 20,
+			lazy: true,
+			grid: {
+				rows: 2
+			},
+			navigation: {
+				nextEl: '.advantages-slider .slider-next',
+				prevEl: '.advantages-slider .slider-prev'
+			},
+			breakpoints: {
+				[MEDIA.md]: {
+					slidesPerView: 2,
+					spaceBetween: 40,
+				},
+				[MEDIA.lg]: {
+					slidesPerView: 3,
+					spaceBetween: 40,
+				},
+			}
+		})
+	</script>
 
 	<section class="pray">
 		<div class="pray-form">
 			<div class="pray-form__header">
-				<div class="text-h6 color-primary font-alt">В течение 2 часов</div>
-				<div class="text-h2 color-white">Получите бесплатный расчет стоимости вашей грузоперевозки</div>
+				<div class="text-body-1 text--demibold text-md-h6 color-primary font-alt mb-2">В течение 2 часов</div>
+				<div class="text-subtitle-1 text-md-h2 color-white">Получите бесплатный расчет стоимости вашей
+					грузоперевозки</div>
 			</div>
 			<div class="pray-form__sect">
-				<div class="grid grid-spacing-6">
+				<div class="grid grid-spacing-md-6">
 					<div class="grid-col-12">
 						<label class="form-field">
-							<div class="text--demibold color-white">Инфо о грузе (что перевозите, примерный вес)</div>
-							<div class="form-input-cover">
+							<div class="text--demibold color-white d-none d-md-block">Инфо о грузе (что перевозите,
+								примерный вес)</div>
+							<div class="form-input-cover d-none d-md-flex">
 								<input type="text" class="form-input" placeholder="Напишите о вашем грузе...">
 							</div>
-						</label>
-					</div>
-					<div class="grid-col-6">
-						<label class="form-field">
-							<div class="text--demibold color-white">Откуда выезд</div>
-							<div class="form-input-cover">
-								<input type="text" class="form-input" placeholder="Укажите адрес...">
+							<div class="form-input-cover d-md-none ">
+								<textarea class="form-input"
+									placeholder="Инфо о грузе (что перевозите, примерный вес)"></textarea>
 							</div>
 						</label>
 					</div>
-					<div class="grid-col-6">
+					<div class="grid-col-md-6">
 						<label class="form-field">
-							<div class="text--demibold color-white">Куда везем</div>
+							<div class="text--demibold color-white d-none d-md-block">Откуда выезд</div>
 							<div class="form-input-cover">
-								<input type="text" class="form-input" placeholder="Укажите адрес...">
+								<input type="text" class="form-input" placeholder="Укажите адрес..."
+									data-mobile-placeholder="Откуда">
+							</div>
+						</label>
+					</div>
+					<div class="grid-col-md-6">
+						<label class="form-field">
+							<div class="text--demibold color-white d-none d-md-block">Куда везем</div>
+							<div class="form-input-cover">
+								<input type="text" class="form-input" placeholder="Укажите адрес..."
+									data-mobile-placeholder="Куда">
 							</div>
 						</label>
 					</div>
 				</div>
 			</div>
 			<div class="pray-form__footer">
-				<div class="grid grid-spacing-6">
+				<div class="grid grid-spacing-md-6">
 
-					<div class="grid-col-6">
+					<div class="grid-col-md-6">
 						<label class="form-field">
-							<div class="text--demibold color-white">Ваше имя</div>
+							<div class="text--demibold color-white d-none d-md-block">Ваше имя</div>
 							<div class="form-input-cover">
-								<input type="text" class="form-input" placeholder="Укажите имя...">
+								<input type="text" class="form-input" placeholder="Укажите имя..."
+									data-mobile-placeholder="Укажите ваше имя">
 							</div>
 						</label>
 					</div>
-					<div class="grid-col-6">
+					<div class="grid-col-md-6">
 						<label class="form-field">
-							<div class="text--demibold color-white">Ваш телефон</div>
+							<div class="text--demibold color-white d-none d-md-block">Ваш телефон</div>
 							<div class="form-input-cover">
-								<input type="text" class="form-input" placeholder="+7 ( _ _ _ ) _ _ _ - _ _ - _ _">
+								<input type="text" class="form-input" placeholder="+7 ( _ _ _ ) _ _ _ - _ _ - _ _"
+									data-mobile-placeholder="Номер телефона">
 							</div>
 						</label>
 					</div>
 				</div>
 
-				<div class="flex flex-align-center mt-10">
-					<button class="btn btn--primary btn--fill">
+				<div class="d-lg-flex flex-align-center mt-10">
+					<button class="btn btn--primary btn--fill w-100 w-md-auto">
 						<svg class="icon mr-2">
 							<use xlink:href="img/icons.svg#calculator" />
 						</svg>
 						Рассчитать стоимость
 					</button>
-					<div class="text-body-2 fade-40 color-white ml-7">
+					<div class="text-small-1 text-md-body-2 fade-40 color-white ml-lg-7 mt-5 mt-lg-0">
 						Отправляя форму Вы даете согласие на обработку <br>
 						Ваших персональных данных
 					</div>
@@ -305,11 +358,27 @@
 		<div class="park__subtitle subtitle">
 			Оперативно подберем необходимый транспорт и оптимальный маршрут для перевозки груза
 		</div>
+		<div class="grid">
+			<div class="grid-col-6 grid-col-md-4 grid-col-lg-3">
+				<div class="park-item h-100">
+					<div class="park-item__img image image--rect">
+						<img src="img/park/1.png" alt="">
+					</div>
+					<div class="park-item__content">
+						<div class="text-body-2 text--demibold text-md-subtitle-2 text--center">
+							120-ка полуприцеп + прицеп <br>
+							60-120 М3 (автопоезд)
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</section>
 
 	<section class="reviews">
 		<div class="reviews__title title">Отзывы наших клиентов</div>
-		<div class="reviews__subtitle subtitle">Каждый день мы получаем положительные отзывы от наших постоянных клиентов</div>
+		<div class="reviews__subtitle subtitle">Каждый день мы получаем положительные отзывы от наших постоянных
+			клиентов</div>
 		<div class="slider slider-reviews">
 			<div class="swiper grid-wrap grid-spacing-6">
 				<div class="swiper-wrapper">
@@ -368,7 +437,7 @@
 		</div>
 		<button class="btn btn--primary btn--fill mt-10 mx-auto">Оставить отзыв</button>
 	</section>
-	
+
 	<script>
 		new Swiper('.slider-reviews .swiper', {
 			slidesPerView: 'auto',
@@ -379,7 +448,7 @@
 			}
 		})
 	</script>
-	
+
 	<section class="questions">
 		<div class="questions__title title">Вопросы и ответы по грузоперевозкам</div>
 		<div class="questions__subtitle subtitle">Мы собрали для вас самые популярные и часто задаваемые вопросы</div>
@@ -399,7 +468,12 @@
 				</div>
 				<div class="questions__body" data-toggle-content data-toggle-height="true">
 					<p class="questions__text pt-5 pb-2">
-						C каждым клиентом заключается договор. В нем фиксируются все условия и договоренности, а также наша ответственность за сохранность имущества. В нашей компании действуют собственные Стандарты организации переезда. Все сотрудники неукоснительно соблюдают его, а Служба контроля качества следит за этим. Мы точно планируем все предстоящие работы и согласовываем их с вами. Если нужно, то за несколько дней до переезда привезем коробки, скотч и другие упаковочные материалы, чтобы вы могли собрать вещи без нашего участия.
+						C каждым клиентом заключается договор. В нем фиксируются все условия и договоренности, а также
+						наша ответственность за сохранность имущества. В нашей компании действуют собственные Стандарты
+						организации переезда. Все сотрудники неукоснительно соблюдают его, а Служба контроля качества
+						следит за этим. Мы точно планируем все предстоящие работы и согласовываем их с вами. Если нужно,
+						то за несколько дней до переезда привезем коробки, скотч и другие упаковочные материалы, чтобы
+						вы могли собрать вещи без нашего участия.
 					</p>
 				</div>
 			</div>
@@ -409,7 +483,8 @@
 						<svg class="questions__icon icon mr-4">
 							<use xlink:href="img/icons.svg#question" />
 						</svg>
-						<div class="questions__name-text">Не нашел нужную услугу на сайте, как я могу связаться и уточнить что мне нужно?</div>
+						<div class="questions__name-text">Не нашел нужную услугу на сайте, как я могу связаться и
+							уточнить что мне нужно?</div>
 					</div>
 					<div class="questions__sign">
 						<span class="questions__line questions__line--1"></span>
@@ -418,7 +493,12 @@
 				</div>
 				<div class="questions__body" data-toggle-content data-toggle-height="true">
 					<p class="questions__text pt-5 pb-2">
-						C каждым клиентом заключается договор. В нем фиксируются все условия и договоренности, а также наша ответственность за сохранность имущества. В нашей компании действуют собственные Стандарты организации переезда. Все сотрудники неукоснительно соблюдают его, а Служба контроля качества следит за этим. Мы точно планируем все предстоящие работы и согласовываем их с вами. Если нужно, то за несколько дней до переезда привезем коробки, скотч и другие упаковочные материалы, чтобы вы могли собрать вещи без нашего участия.
+						C каждым клиентом заключается договор. В нем фиксируются все условия и договоренности, а также
+						наша ответственность за сохранность имущества. В нашей компании действуют собственные Стандарты
+						организации переезда. Все сотрудники неукоснительно соблюдают его, а Служба контроля качества
+						следит за этим. Мы точно планируем все предстоящие работы и согласовываем их с вами. Если нужно,
+						то за несколько дней до переезда привезем коробки, скотч и другие упаковочные материалы, чтобы
+						вы могли собрать вещи без нашего участия.
 					</p>
 				</div>
 			</div>
@@ -428,7 +508,8 @@
 						<svg class="questions__icon icon mr-4">
 							<use xlink:href="img/icons.svg#question" />
 						</svg>
-						<div class="questions__name-text">Не нашел нужную услугу на сайте, как я могу связаться и уточнить что мне нужно?</div>
+						<div class="questions__name-text">Не нашел нужную услугу на сайте, как я могу связаться и
+							уточнить что мне нужно?</div>
 					</div>
 					<div class="questions__sign">
 						<span class="questions__line questions__line--1"></span>
@@ -437,7 +518,12 @@
 				</div>
 				<div class="questions__body" data-toggle-content data-toggle-height="true">
 					<p class="questions__text pt-5 pb-2">
-						C каждым клиентом заключается договор. В нем фиксируются все условия и договоренности, а также наша ответственность за сохранность имущества. В нашей компании действуют собственные Стандарты организации переезда. Все сотрудники неукоснительно соблюдают его, а Служба контроля качества следит за этим. Мы точно планируем все предстоящие работы и согласовываем их с вами. Если нужно, то за несколько дней до переезда привезем коробки, скотч и другие упаковочные материалы, чтобы вы могли собрать вещи без нашего участия.
+						C каждым клиентом заключается договор. В нем фиксируются все условия и договоренности, а также
+						наша ответственность за сохранность имущества. В нашей компании действуют собственные Стандарты
+						организации переезда. Все сотрудники неукоснительно соблюдают его, а Служба контроля качества
+						следит за этим. Мы точно планируем все предстоящие работы и согласовываем их с вами. Если нужно,
+						то за несколько дней до переезда привезем коробки, скотч и другие упаковочные материалы, чтобы
+						вы могли собрать вещи без нашего участия.
 					</p>
 				</div>
 			</div>
@@ -456,7 +542,12 @@
 				</div>
 				<div class="questions__body" data-toggle-content data-toggle-height="true">
 					<p class="questions__text pt-5 pb-2">
-						C каждым клиентом заключается договор. В нем фиксируются все условия и договоренности, а также наша ответственность за сохранность имущества. В нашей компании действуют собственные Стандарты организации переезда. Все сотрудники неукоснительно соблюдают его, а Служба контроля качества следит за этим. Мы точно планируем все предстоящие работы и согласовываем их с вами. Если нужно, то за несколько дней до переезда привезем коробки, скотч и другие упаковочные материалы, чтобы вы могли собрать вещи без нашего участия.
+						C каждым клиентом заключается договор. В нем фиксируются все условия и договоренности, а также
+						наша ответственность за сохранность имущества. В нашей компании действуют собственные Стандарты
+						организации переезда. Все сотрудники неукоснительно соблюдают его, а Служба контроля качества
+						следит за этим. Мы точно планируем все предстоящие работы и согласовываем их с вами. Если нужно,
+						то за несколько дней до переезда привезем коробки, скотч и другие упаковочные материалы, чтобы
+						вы могли собрать вещи без нашего участия.
 					</p>
 				</div>
 			</div>
@@ -475,9 +566,14 @@
 				</div>
 				<div class="questions__body" data-toggle-content data-toggle-height="true">
 					<p class="questions__text pt-5 pb-2">
-						C каждым клиентом заключается договор. В нем фиксируются все условия и договоренности, а также наша ответственность за сохранность имущества. В нашей компании действуют собственные Стандарты организации переезда. Все сотрудники неукоснительно соблюдают его, а Служба контроля качества следит за этим. Мы точно планируем все предстоящие работы и согласовываем их с вами. Если нужно, то за несколько дней до переезда привезем коробки, скотч и другие упаковочные материалы, чтобы вы могли собрать вещи без нашего участия.
+						C каждым клиентом заключается договор. В нем фиксируются все условия и договоренности, а также
+						наша ответственность за сохранность имущества. В нашей компании действуют собственные Стандарты
+						организации переезда. Все сотрудники неукоснительно соблюдают его, а Служба контроля качества
+						следит за этим. Мы точно планируем все предстоящие работы и согласовываем их с вами. Если нужно,
+						то за несколько дней до переезда привезем коробки, скотч и другие упаковочные материалы, чтобы
+						вы могли собрать вещи без нашего участия.
 					</p>
-        </div>
+				</div>
 			</div>
 		</div>
 	</section>

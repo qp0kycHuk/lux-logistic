@@ -15,12 +15,16 @@ import './ui/ui-core.scss'
 import './ui/ui-example.scss'
 import './scss/frontend--fonts.scss'
 import './scss/frontend--style.scss'
+import { MEDIA } from "./js/constants";
+import { setPlaceholders } from "./js/setPlaceholders";
 
 Swiper.use([Navigation, Pagination, Scrollbar, Autoplay, Grid, Thumbs, EffectFade, Lazy]);
 Swiper.defaults.touchStartPreventDefault = false
 window.Swiper = Swiper
 window.ripple = ripple
 window.addEventListener('DOMContentLoaded', () => loadHandler())
+
+window.MEDIA = MEDIA
 
 function loadHandler() {
 	fancybox.init();
@@ -35,6 +39,7 @@ function loadHandler() {
 	ripple.attach('.waved')
 	ripple.deAttach('.btn--link')
 
-
+	setPlaceholders();
 
 }
+
