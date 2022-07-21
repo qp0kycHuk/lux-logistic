@@ -593,6 +593,8 @@ body {
 	}
 
 	@media(max-width: $md) {
+		margin: 0;
+		border-radius: 0;
 		padding-top   : 26px;
 		padding-bottom: 48px;
 
@@ -602,6 +604,10 @@ body {
 
 		&__subtitle {
 			margin-bottom: 30px;
+		}
+		&__item {
+			max-width: 285px;
+			margin: 0 auto;
 		}
 	}
 }
@@ -995,6 +1001,7 @@ body {
 	padding-top     : 34px;
 	padding-bottom  : 54px;
 	background-color: #413E3D;
+	overflow: hidden;
 
 	&__top {
 		display        : flex;
@@ -1007,6 +1014,38 @@ body {
 		font-weight: 600;
 		font-size  : 42px;
 		line-height: 57px;
+	}
+	&__map {
+		margin-bottom: 47px;
+	}
+	&__head {
+		width: max-content;
+		font-weight: 600;
+		font-size: 14px;
+		border-bottom: 1px dashed rgba(255, 255, 255, 0.6);
+		position: relative;
+		cursor: pointer;
+		&::after, &::before {
+			content: "";
+			background-color: rgba(217, 217, 217, 0.2);
+			width: 540px;
+			height: 1px;
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			margin: auto 0;
+		}
+		&::before {
+			left: -550px;
+		}
+		&::after {
+			right: -550px;
+		}
+		&-item {
+			&--2 {
+				display: none;
+			}
+		}
 	}
 
 	&__bottom {
@@ -1049,7 +1088,21 @@ body {
 		}
 	}
 
+	&__link {
+		font-weight: 600;
+		&--mail {
+			font-size: 20px;
+		}
+		&--tel {
+			font-size: 22px;
+		}
+		&:hover {
+			text-decoration: underline;
+		}
+	}
+
 	&__text {
+		width: max-content;
 		&--1 {
 			font-weight          : 300;
 			font-size            : 14px;
@@ -1070,4 +1123,61 @@ body {
 			opacity      : 0.6;
 		}
 	}
+
+	@media(max-width: $lg) {
+		&__bottom {
+			flex-direction: column;
+			align-items    : flex-start;
+			justify-content: flex-start;
+		}
+		&__item {
+			margin-bottom: 24px;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+		&__img {
+			font-size: 68px;
+			margin-right: 14px;
+		}
+	}
+
+	@media(max-width: $md) {
+		padding-top: 26px;
+		padding-bottom: 52px;
+		&__top {
+			margin-bottom: 24px;
+		}
+		&__title {
+			font-weight: 600;
+			font-size: 24px;
+		}
+		&__btn {
+			display: none;
+		}
+		&__map {
+			display: none;
+		}
+		&__item {
+			&--mail {
+				display: none;
+			}
+		}
+	}
+	&__text {
+		&--1 {
+			font-size: 12px;
+		}
+
+		&--3 {
+			font-size    : 12px;
+		}
+	}
+}
+
+.map {
+	margin-top: 50px;
+	height: 300px;
+	border-radius: 16px;
+	overflow: hidden;
 }

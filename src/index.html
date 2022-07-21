@@ -670,22 +670,24 @@
 	<footer class="footer" id="footer">
 		<div class="footer__top">
 			<div class="footer__title">Наши контакты</div>
-			<button class="btn btn--primary btn--fill mt-5">
+			<button class="footer__btn btn btn--primary btn--fill mt-5">
 				<svg class="icon mr-2">
 					<use xlink:href="img/icons.svg#calculator" />
 				</svg>
 				Рассчитать стоимость
 			</button>
 		</div>
-		<div class="footer__map">
-			<div class="footer__head">
+		<div class="footer__map" data-toggle-cover>
+			<div class="footer__head mx-auto font-alt" data-toggle-link>
 				<span class="footer__head-item footer__head-item--1">Развернуть карту</span>
 				<span class="footer__head-item footer__head-item--2">Свернуть карту</span>
 			</div>
-			<div class="map" id="map"></div>
+			<div data-toggle-content data-toggle-height="true">
+				<div class="map" id="map"></div> 
+			</div>
 		</div>
 		<div class="footer__bottom">
-			<div class="footer__item">
+			<div class="footer__item footer__item--main">
 				<div class="footer__img footer__img--1">
 					<img class="icon" src="img/logo-white.svg" alt="">
 				</div>
@@ -697,21 +699,21 @@
 					</div>
 				</div>
 			</div>
-			<div class="footer__item">
+			<div class="footer__item footer__item--mail">
 				<div class="footer__img footer__img--2">
 					<img class="icon" src="img/Message.svg" alt="">
 				</div>
 				<div class="footer__info">
-					<a class="footer__link footer__link--mail" href="mailto: Luks.logistik@yandex.ru">Luks.logistik@yandex.ru</a>
+					<a class="footer__link footer__link--mail font-alt" href="mailto: Luks.logistik@yandex.ru">Luks.logistik@yandex.ru</a>
 					<div class="footer__text footer__text--2">Пишите по всем вопросам</div>
 				</div>
 			</div>
-			<div class="footer__item">
+			<div class="footer__item footer__item--tel">
 				<div class="footer__img footer__img--3">
 					<img class="icon" src="img/wt.svg" alt="">
 				</div>
 				<div class="footer__info">
-					<a class="footer__link footer__link--tel" href="tel: 8 800 600 54 88">8 800 600 54 88</a>
+					<a class="footer__link footer__link--tel font-alt" href="tel: 8 800 600 54 88">8 800 600 54 88</a>
 					<div class="footer__text footer__text--3">Написать в WhatsApp</div>
 				</div>
 			</div>
