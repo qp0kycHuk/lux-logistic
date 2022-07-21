@@ -229,6 +229,10 @@ body {
 	&__form {
 		width     : 255px;
 		margin-top: 42px;
+
+		@media (min-width:$md){
+			display: none;
+		}
 	}
 
 	&__img {
@@ -397,6 +401,12 @@ body {
 
 		&__img {
 			height: 248px;
+
+			@media (max-width:$md) {
+				height        : 160px;
+				padding-top   : 15px;
+				padding-bottom: 15px;
+			}
 
 			img {
 				width     : 100%;
@@ -650,7 +660,7 @@ body {
 		bottom          : 0;
 		right           : 0;
 		margin          : auto;
-		transition: 0.2s ease;
+		transition      : 0.2s ease;
 
 		&--2 {
 			transform: rotate(90deg);
@@ -705,8 +715,8 @@ body {
 		}
 
 		&__text {
-			border-top: 1px solid #D9D9D9;
-			margin-top: 20px;
+			border-top : 1px solid #D9D9D9;
+			margin-top : 20px;
 			padding    : 15px;
 			font-weight: 400;
 			font-size  : 12px;
@@ -765,7 +775,8 @@ body {
 	padding-top   : 38px;
 
 	@media (max-width:$md) {
-		padding-top: 22px;
+		padding-top   : 22px;
+		padding-bottom: 42px;
 	}
 
 	&__title {
@@ -774,11 +785,16 @@ body {
 
 	&__subtitle {
 		margin-bottom: 52px;
+
+		@media (max-width:$md) {
+			margin-bottom: 28px;
+		}
 	}
 
 	&-item {
 		background    : #FFFFFF;
 		border-radius : 16px;
+		overflow      : hidden;
 		transition    : .25s ease;
 		cursor        : pointer;
 		display       : flex;
@@ -803,6 +819,18 @@ body {
 			display        : flex;
 			flex-direction : column;
 			justify-content: center;
+
+			@media (max-width:$md) {
+				padding: 8px;
+
+				* {
+					display           : -webkit-box;
+					-webkit-line-clamp: 2;
+					-webkit-box-orient: vertical;
+					overflow          : hidden;
+				}
+			}
+
 		}
 	}
 
