@@ -1,4 +1,3 @@
-
 /******/ (() => { // webpackBootstrap
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
@@ -137,6 +136,85 @@ function getCookie(name) {
   var matches = document.cookie.match(new RegExp("(?:^|; )" + name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1') + "=([^;]*)"));
   return matches ? decodeURIComponent(matches[1]) : false;
 }
+
+/***/ }),
+
+/***/ "./src/js/mask-tel.js":
+/*!****************************!*\
+  !*** ./src/js/mask-tel.js ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+var getInputNumbersValue = function getInputNumbersValue(input) {
+  return input.value.replace(/\D/g, '');
+};
+
+var onPhoneInput = function onPhoneInput(event) {
+  var input = event.target;
+  var inputNumbersValue = getInputNumbersValue(input);
+  var selectionStart = input.selectionStart;
+  var formattedInputValue = '';
+  if (!inputNumbersValue) return input.value = '';
+
+  if (input.value.length != selectionStart) {
+    if (event.data && /\D/g.test(event.data)) input.value = inputNumbersValue;
+    return;
+  }
+
+  if (['7', '8', '9'].indexOf(inputNumbersValue[0]) > -1) {
+    if (inputNumbersValue[0] == '9') inputNumbersValue = '7' + inputNumbersValue;
+    var firstSymbols = inputNumbersValue[0] == '8' ? '8' : '+7';
+    formattedInputValue = input.value = firstSymbols + ' ';
+    if (inputNumbersValue.length > 1) formattedInputValue += '(' + inputNumbersValue.substring(1, 4);
+    if (inputNumbersValue.length >= 5) formattedInputValue += ') ' + inputNumbersValue.substring(4, 7);
+    if (inputNumbersValue.length >= 8) formattedInputValue += '-' + inputNumbersValue.substring(7, 9);
+    if (inputNumbersValue.length >= 10) formattedInputValue += '-' + inputNumbersValue.substring(9, 11);
+  } else {
+    formattedInputValue = '+' + inputNumbersValue.substring(0, 16);
+  }
+
+  input.value = formattedInputValue;
+};
+
+var onPhoneKeyDown = function onPhoneKeyDown(event) {
+  var inputValue = event.target.value.replace(/\D/g, '');
+  if (event.keyCode == 8 && inputValue.length == 1) event.target.value = '';
+};
+
+var onPhonePaste = function onPhonePaste(event) {
+  var input = event.target;
+  var inputNumbersValue = getInputNumbersValue(input);
+  var pasted = event.clipboardData || window.clipboardData;
+
+  if (pasted) {
+    var pastedText = pasted.getData('Text');
+
+    if (/\D/g.test(pastedText)) {
+      input.value = inputNumbersValue;
+      return;
+    }
+  }
+};
+
+var init = function init() {
+  document.addEventListener('input', function (event) {
+    if (event.target.classList.contains('-input-tel-')) onPhoneInput(event);
+  });
+  document.addEventListener('keydown', function (event) {
+    if (event.target.classList.contains('-input-tel-')) onPhoneKeyDown(event);
+  });
+  document.addEventListener('paste', function (event) {
+    if (event.target.classList.contains('-input-tel-')) onPhonePaste(event);
+  });
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
+  init: init
+});
 
 /***/ }),
 
@@ -14342,15 +14420,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swiper__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! swiper */ "./node_modules/swiper/swiper.esm.js");
 /* harmony import */ var ymaps__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ymaps */ "./node_modules/ymaps/dist/ymaps.esm.js");
 /* harmony import */ var _js_scrolled__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./js/scrolled */ "./src/js/scrolled.js");
-/* harmony import */ var npm_kit_ripple_index_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! npm-kit-ripple/index.css */ "./node_modules/npm-kit-ripple/index.css");
-/* harmony import */ var swiper_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! swiper/css */ "./node_modules/swiper/swiper.min.css");
-/* harmony import */ var _ui_ui_reset_scss__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./ui/ui-reset.scss */ "./src/ui/ui-reset.scss");
-/* harmony import */ var _ui_ui_core_scss__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./ui/ui-core.scss */ "./src/ui/ui-core.scss");
-/* harmony import */ var _ui_ui_example_scss__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./ui/ui-example.scss */ "./src/ui/ui-example.scss");
-/* harmony import */ var _scss_frontend_fonts_scss__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./scss/frontend--fonts.scss */ "./src/scss/frontend--fonts.scss");
-/* harmony import */ var _scss_frontend_style_scss__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./scss/frontend--style.scss */ "./src/scss/frontend--style.scss");
-/* harmony import */ var _js_constants__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./js/constants */ "./src/js/constants.js");
-/* harmony import */ var _js_setPlaceholders__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./js/setPlaceholders */ "./src/js/setPlaceholders.js");
+/* harmony import */ var _js_mask_tel__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./js/mask-tel */ "./src/js/mask-tel.js");
+/* harmony import */ var npm_kit_ripple_index_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! npm-kit-ripple/index.css */ "./node_modules/npm-kit-ripple/index.css");
+/* harmony import */ var swiper_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! swiper/css */ "./node_modules/swiper/swiper.min.css");
+/* harmony import */ var _ui_ui_reset_scss__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./ui/ui-reset.scss */ "./src/ui/ui-reset.scss");
+/* harmony import */ var _ui_ui_core_scss__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./ui/ui-core.scss */ "./src/ui/ui-core.scss");
+/* harmony import */ var _ui_ui_example_scss__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./ui/ui-example.scss */ "./src/ui/ui-example.scss");
+/* harmony import */ var _scss_frontend_fonts_scss__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./scss/frontend--fonts.scss */ "./src/scss/frontend--fonts.scss");
+/* harmony import */ var _scss_frontend_style_scss__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./scss/frontend--style.scss */ "./src/scss/frontend--style.scss");
+/* harmony import */ var _js_constants__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./js/constants */ "./src/js/constants.js");
+/* harmony import */ var _js_setPlaceholders__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./js/setPlaceholders */ "./src/js/setPlaceholders.js");
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -14382,6 +14461,7 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 
 
+
 swiper__WEBPACK_IMPORTED_MODULE_7__["default"].use([swiper__WEBPACK_IMPORTED_MODULE_7__.Navigation, swiper__WEBPACK_IMPORTED_MODULE_7__.Pagination, swiper__WEBPACK_IMPORTED_MODULE_7__.Scrollbar, swiper__WEBPACK_IMPORTED_MODULE_7__.Autoplay, swiper__WEBPACK_IMPORTED_MODULE_7__.Grid, swiper__WEBPACK_IMPORTED_MODULE_7__.Thumbs, swiper__WEBPACK_IMPORTED_MODULE_7__.EffectFade, swiper__WEBPACK_IMPORTED_MODULE_7__.Lazy]);
 swiper__WEBPACK_IMPORTED_MODULE_7__["default"].defaults.touchStartPreventDefault = false;
 window.Swiper = swiper__WEBPACK_IMPORTED_MODULE_7__["default"];
@@ -14389,7 +14469,7 @@ window.ripple = npm_kit_ripple__WEBPACK_IMPORTED_MODULE_6__["default"];
 window.addEventListener('DOMContentLoaded', function () {
   return loadHandler();
 });
-window.MEDIA = _js_constants__WEBPACK_IMPORTED_MODULE_17__.MEDIA;
+window.MEDIA = _js_constants__WEBPACK_IMPORTED_MODULE_18__.MEDIA;
 
 function loadHandler() {
   _js_fancybox__WEBPACK_IMPORTED_MODULE_1__["default"].init();
@@ -14400,10 +14480,11 @@ function loadHandler() {
   npm_kit_ripple__WEBPACK_IMPORTED_MODULE_6__["default"].init();
   _js_theme__WEBPACK_IMPORTED_MODULE_3__["default"].init();
   _js_scrolled__WEBPACK_IMPORTED_MODULE_9__["default"].init();
+  _js_mask_tel__WEBPACK_IMPORTED_MODULE_10__["default"].init();
   npm_kit_ripple__WEBPACK_IMPORTED_MODULE_6__["default"].attach('.btn');
   npm_kit_ripple__WEBPACK_IMPORTED_MODULE_6__["default"].attach('.waved');
   npm_kit_ripple__WEBPACK_IMPORTED_MODULE_6__["default"].deAttach('.btn--link');
-  (0,_js_setPlaceholders__WEBPACK_IMPORTED_MODULE_18__.setPlaceholders)();
+  (0,_js_setPlaceholders__WEBPACK_IMPORTED_MODULE_19__.setPlaceholders)();
   document.addEventListener('click', clickHandler);
   window.addEventListener('scroll', scrollHandler);
   ymaps__WEBPACK_IMPORTED_MODULE_8__["default"].load().then(function (maps) {
@@ -14416,10 +14497,16 @@ function loadHandler() {
       });
     });
     var map = new maps.Map('map', {
-      center: [45.03191007458623, 38.921171499999936],
-      zoom: 16
+      center: [45.06611530619296, 38.985679499999996],
+      zoom: 7
     });
-    var placemark = new maps.Placemark([45.03191007458623, 38.921171499999936], {}, {
+    var placemark = new maps.Placemark([45.06611530619296, 38.985679499999996], {}, {
+      iconLayout: 'default#image',
+      iconImageHref: '../img/geo.png',
+      iconImageSize: [72, 72],
+      iconImageOffset: [-20, -50]
+    });
+    var placemark_2 = new maps.Placemark([44.109767863084514, 39.07521900000001], {}, {
       iconLayout: 'default#image',
       iconImageHref: '../img/geo.png',
       iconImageSize: [72, 72],
@@ -14434,6 +14521,7 @@ function loadHandler() {
     map.controls.remove('rulerControl');
     map.behaviors.disable(['scrollZoom']);
     map.geoObjects.add(placemark);
+    map.geoObjects.add(placemark_2);
   })["catch"](function (error) {
     return console.log('Failed to load Yandex Maps', error);
   });
@@ -14485,5 +14573,4 @@ function scrollHandler() {
 
 /******/ })()
 ;
-
 //# sourceMappingURL=index.js.map
