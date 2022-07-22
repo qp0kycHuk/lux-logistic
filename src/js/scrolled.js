@@ -32,11 +32,12 @@ const animOnScroll = () => {
 
 			item.classList.add('-el-show-')
 
-		} else {
-
-			item.classList.remove('-el-show-')
-
 		}
+		// else {
+
+		// 	item.classList.remove('-el-show-')
+
+		// }
 
 	}
 
