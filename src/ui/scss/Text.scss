@@ -1,7 +1,12 @@
 // out: false
 
 @mixin Text {
-
+	&-h0{
+		font-size: 42px;
+		font-weight: 700;
+		line-height: 1.1;
+	}
+	
 	&-h1 {
 		font-size: 36px;
 		font-weight: 700;

@@ -19,6 +19,7 @@ import './scss/frontend--fonts.scss'
 import './scss/frontend--style.scss'
 import { MEDIA } from "./js/constants";
 import { setPlaceholders } from "./js/setPlaceholders";
+import inputmask from "./js/inputmask";
 
 Swiper.use([Navigation, Pagination, Scrollbar, Autoplay, Grid, Thumbs, EffectFade, Lazy]);
 Swiper.defaults.touchStartPreventDefault = false
@@ -37,7 +38,9 @@ function loadHandler() {
 	ripple.init();
 	theme.init();
 	scrolled.init()
-	maskTel.init()
+	// maskTel.init()
+	
+	inputmask.init(document)
 
 	ripple.attach('.btn')
 	ripple.attach('.waved')
