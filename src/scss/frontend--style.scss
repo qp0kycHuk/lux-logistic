@@ -235,6 +235,10 @@ body {
 		padding-bottom: 20px;
 	}
 
+	@media (max-width:$sm) {
+		padding-top: 15px;
+	}
+
 	&__content {
 		position: relative;
 		z-index : 2;
@@ -275,7 +279,7 @@ body {
 		margin-top: 40px;
 
 		@media (max-width:$md) {
-			margin-top: 20px;
+			margin-top: 15px;
 		}
 
 		li {
@@ -302,7 +306,7 @@ body {
 			margin-top: 16px;
 
 			@media (max-width:$md) {
-				margin-top: 8px;
+				margin-top: 5px;
 			}
 		}
 	}
@@ -331,7 +335,7 @@ body {
 
 	&__form {
 		width     : 255px;
-		margin-top: 42px;
+		margin-top: 22px;
 
 		@media (min-width:$md) {
 			display: none;
@@ -367,6 +371,18 @@ body {
 			@media (max-width:$md) {
 				object-fit: cover;
 			}
+		}
+	}
+
+	&-weight {
+		@media (max-width:$md) {
+			position     : relative;
+			background   : #F0F0F0;
+			border-radius: 8px;
+			display      : block;
+			padding      : 4px 8px;
+			margin-left  : -4px;
+			width        : max-content;
 		}
 	}
 }
@@ -586,7 +602,7 @@ body {
 
 			@media (min-width:$lg) {
 				transform: none !important;
-				width: 100% !important;
+				width    : 100% !important;
 				grid-gap : 40px;
 
 			}
@@ -602,7 +618,7 @@ body {
 		.swiper-slide {
 			@media (min-width:$lg) {
 				margin: 0 !important;
-				width: auto !important;
+				width : auto !important;
 			}
 		}
 

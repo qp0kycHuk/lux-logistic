@@ -106,8 +106,8 @@
 		}
 
 		&.error {
-			color       : var(--color-red);
 			border-color: var(--color-red);
+			box-shadow: 0 0 0 1px var(--color-red);
 			z-index     : 2;
 
 			&::placeholder {

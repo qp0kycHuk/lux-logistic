@@ -39,7 +39,7 @@ function loadHandler() {
 	theme.init();
 	scrolled.init()
 	// maskTel.init()
-	
+
 	inputmask.init(document)
 
 	ripple.attach('.btn')
@@ -49,6 +49,22 @@ function loadHandler() {
 	setPlaceholders();
 	document.addEventListener('click', clickHandler);
 	window.addEventListener('scroll', scrollHandler);
+
+	window.addEventListener('scroll', mapsInit)
+	document.addEventListener('click', mapsInit)
+	
+	window.addEventListener('toggleopen', (event) => {
+		if (event.detail.target.classList.contains('footer__map')) {
+			mapsInit()
+		}
+	})
+}
+
+let mapInited = false;
+
+function mapsInit() {
+	if (mapInited) return;
+	mapInited = true
 
 	ymaps
 		.load()
@@ -60,12 +76,12 @@ function loadHandler() {
 
 			const map = new maps.Map('map', {
 
-				center: [45.06611530619296,38.985679499999996],
+				center: [45.06611530619296, 38.985679499999996],
 				zoom: 7
 
 			})
 
-			const placemark = new maps.Placemark([45.06611530619296,38.985679499999996], {}, {
+			const placemark = new maps.Placemark([45.06611530619296, 38.985679499999996], {}, {
 
 				iconLayout: 'default#image',
 				iconImageHref: '../img/geo.png',
@@ -74,7 +90,7 @@ function loadHandler() {
 
 			})
 
-			const placemark_2 = new maps.Placemark([44.109767863084514,39.07521900000001], {}, {
+			const placemark_2 = new maps.Placemark([44.109767863084514, 39.07521900000001], {}, {
 
 				iconLayout: 'default#image',
 				iconImageHref: '../img/geo.png',
