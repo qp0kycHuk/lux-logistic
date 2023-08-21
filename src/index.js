@@ -8,7 +8,7 @@ import ripple from 'npm-kit-ripple';
 import Swiper, { Navigation, Pagination, Scrollbar, Autoplay, Grid, Thumbs, EffectFade, Lazy } from 'swiper';
 import ymaps from 'ymaps';
 import scrolled from './js/scrolled'
-import maskTel from './js/mask-tel'
+import animations from './js/animations'
 
 import 'npm-kit-ripple/index.css';
 import 'swiper/css';
@@ -38,7 +38,7 @@ function loadHandler() {
 	ripple.init();
 	theme.init();
 	scrolled.init()
-	// maskTel.init()
+	animations.init()
 
 	inputmask.init(document)
 

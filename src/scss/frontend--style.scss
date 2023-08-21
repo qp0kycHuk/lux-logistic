@@ -1187,6 +1187,11 @@ body {
 	&__item {
 		display    : flex;
 		align-items: center;
+
+		&-dev {
+			text-decoration-line : underline;
+			text-underline-offset: 4px;
+		}
 	}
 
 	&__img {
@@ -1601,5 +1606,16 @@ $transition: 'ease',
 		@media (max-width:$md) {
 			margin-top: 40px;
 		}
+	}
+}
+
+
+.magnetic-wrap {
+	@media(min-width: $lg){
+		padding: 40px;
+	}
+	
+	* {
+		pointer-events: none;
 	}
 }
